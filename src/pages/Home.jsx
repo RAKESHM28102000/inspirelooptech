@@ -3,6 +3,7 @@ import Services from './Services';
 import Contact from './Contact';
 import Coaching from './Coaching';
 import Portfolio from './Portfolio';
+import SkillMarquee from './SkillMarquee';
 
 const Home = () => {
   return (
@@ -104,6 +105,7 @@ const Home = () => {
         </div>
       </section>
       <Services/>
+      <SkillMarquee/>
       <Coaching/>
       <Portfolio/>
       <Contact/>
