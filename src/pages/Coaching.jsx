@@ -3,14 +3,14 @@ import React from 'react';
 const courses = [
   {
     title: 'Full Stack Web Development',
-    price: '₹2,999',
+    price: '₹999',
     duration: '3 to 6 months',
     placement: false,
     syllabus: [
       'HTML, CSS, JavaScript, Git & GitHub',
       'React JS, Node JS, Express JS',
       'MongoDB, REST APIs',
-      'Project Building and Deployment',
+      '10+ Project Building and Deployment',
     ],
   },
   {
@@ -51,7 +51,7 @@ const courses = [
   },
   {
     title: 'Career Prep with Placement Support',
-    price: '₹15,000',
+    price: '₹5,000',
     duration: '3 to 6 months',
     placement: true,
     syllabus: [

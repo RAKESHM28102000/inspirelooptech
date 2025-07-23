@@ -4,112 +4,96 @@ import Contact from './Contact';
 import Coaching from './Coaching';
 import Portfolio from './Portfolio';
 import SkillMarquee from './SkillMarquee';
+import TextTransition, { presets } from 'react-text-transition';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+import About from './About';
+
+const TEXTS = [
+  'Websites',
+  'Branding',
+  'Mockups',
+  'AI Apps',
+  'Logos',
+
+];
 
 const Home = () => {
+  const [index, setIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const intervalId = setInterval(() => setIndex((i) => i + 1), 2500);
+    AOS.init({ duration: 1200, once: true });
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
-    <div className="space-y-20 pt-12">
-
-      {/* Hero Section */}
-      <section className="bg-[#121212] py-20 text-center" data-aos="fade-up">
-        <h1 className="text-4xl md:text-5xl font-bold text-[#E0E0E0] mb-4">
-          Empowering Villages through Innovation
-        </h1>
-        <p className="text-[#B0B0B0] max-w-2xl mx-auto text-lg">
-          We deliver cutting-edge design, web, AI, and educational services — while nurturing future talent from rural communities.
-        </p>
-      </section>
-
-      {/* Features Section */}
-      <section className="bg-[#1E1E1E] py-16" data-aos="fade-right">
-        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
-          {[
-            {
-              title: 'Web & App Development',
-              desc: 'We build fast, scalable, and intelligent websites and apps tailored to your business or brand.',
-              color: 'hover:shadow-[#4fc3f7]'
-            },
-            {
-              title: 'Design & Branding',
-              desc: 'From logos to motion graphics, we create visuals that define your identity and leave a lasting impression.',
-              color: 'hover:shadow-[#f06292]'
-            },
-            {
-              title: 'Rural Student Coaching',
-              desc: 'We teach tech, business, design, and help place rural youth in top firms across India.',
-              color: 'hover:shadow-[#81c784]'
-            },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className={`bg-[#121212] rounded p-6 border border-[#444444] transition-all duration-300 transform hover:scale-105 ${item.color} hover:shadow-lg`}
-            >
-              <h3 className="text-xl font-semibold text-[#E0E0E0] mb-2">{item.title}</h3>
-              <p className="text-[#B0B0B0]">{item.desc}</p>
-            </div>
-          ))}
+    <div className="relative space-y-20 pt-12 bg-[#121212] text-white overflow-hidden">
+      {/* Animated Background with Gradient and Transition */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="w-full h-full bg-gradient-to-tr from-[#0f0f0f] via-[#1e1e1e] to-[#121212] animate-gradient bg-cover bg-no-repeat transition-all duration-1000 ease-in-out" style={{ maskImage: 'radial-gradient(circle at center, rgba(0,0,0,1), rgba(0,0,0,0.2))' }}></div>
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+          <div className="w-80 h-80 bg-[#00C8FF] opacity-20 rounded-full absolute -top-20 -left-20 blur-3xl animate-bounce" data-aos="zoom-in"></div>
+          <div className="w-96 h-96 bg-[#FF4081] opacity-20 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse" data-aos="fade-up"></div>
+          <div className="w-72 h-72 bg-[#00E676] opacity-20 rounded-full absolute -bottom-16 -right-16 blur-3xl animate-spin-slow" data-aos="zoom-out"></div>
         </div>
-      </section>
+      </div>
 
-      {/* About Us Section */}
-      <section className="bg-[#121212] py-20 px-4 text-center" data-aos="fade-up">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#E0E0E0] mb-4">Who We Are</h2>
-          <p className="text-[#B0B0B0] text-lg leading-relaxed">
-            We are a purpose-driven startup combining technology, creativity, and education to uplift rural communities. 
-            Our aim is to create opportunities for underrepresented talent and connect them with the future of work.
+      {/* Hero Section with Text Transition */}
+      <section className="py-24 px-4 flex items-center justify-center text-center min-h-screen" data-aos="fade-up">
+        <div>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-[#E0E0E0] mb-10 leading-tight">
+            We Create Stunning
+          </h1>
+          <div className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#00C8FF] drop-shadow-md grid place-items-center uppercase">
+            <TextTransition springConfig={presets.gentle}>
+              {TEXTS[index % TEXTS.length]}
+            </TextTransition>
+          </div>
+          <p className="text-[#B0B0B0] mt-6 max-w-4xl mx-auto text-base sm:text-lg md:text-xl lg:text-2xl">
+            Specializing in websites, logos, mockups, AI-powered apps, and complete brand identity to elevate your digital presence. We also provide coaching in design and tech to empower rural talent.
           </p>
         </div>
       </section>
 
-      {/* Impact Section */}
-      <section className="bg-[#1E1E1E] py-16 px-4" data-aos="fade-up">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#E0E0E0] mb-8">Our Impact</h2>
-          <div className="grid md:grid-cols-4 gap-6">
-            {[
-              { number: '10+', label: 'Students Trained' },
-              { number: '20+', label: 'Projects Delivered' },
-              { number: '1', label: 'Village Hubs Activated' },
-              { number: '90%', label: 'Job Placement Success' },
-            ].map((stat, idx) => (
-              <div key={idx} className="bg-[#121212] rounded-lg p-6 border border-[#444444] hover:shadow-md hover:shadow-[#888] transition-all duration-300">
-                <h3 className="text-3xl font-bold text-[#E0E0E0] mb-2">{stat.number}</h3>
-                <p className="text-[#B0B0B0] text-sm uppercase tracking-wide">{stat.label}</p>
-              </div>
-            ))}
-          </div>
+      {/* Services Section with Animated Background */}
+      <div className="relative z-0">
+        <div className="absolute inset-0 -z-10 pointer-events-none">
+          <div className="w-80 h-80 bg-[#FFC107] opacity-10 rounded-full absolute top-1/3 left-1/4 blur-3xl animate-pulse" data-aos="fade-right"></div>
+          <div className="w-96 h-96 bg-[#7C4DFF] opacity-10 rounded-full absolute top-2/3 right-1/3 blur-3xl animate-pulse delay-500" data-aos="fade-left"></div>
+          <div className="w-72 h-72 bg-[#18FFFF] opacity-10 rounded-full absolute bottom-10 left-1/2 transform -translate-x-1/2 blur-3xl animate-pulse delay-1000" data-aos="zoom-in"></div>
         </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="bg-[#121212] py-20 px-4" data-aos="fade-up">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#E0E0E0] mb-12">What People Say</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                name: 'Prem Kumar M.',
-                message: 'The design quality and professionalism are amazing! The team understood my vision clearly.',
-              },
-              {
-                name: 'Peter P.',
-                message: 'Thanks to their training program, I now work at a top IT firm. Grateful for their support.',
-              },
-            ].map((testimonial, idx) => (
-              <div key={idx} className="bg-[#1E1E1E] border border-[#444444] rounded p-6 shadow-md hover:shadow-[#aaa] transition duration-300">
-                <p className="text-[#B0B0B0] mb-4 italic">"{testimonial.message}"</p>
-                <h4 className="text-[#E0E0E0] font-semibold">- {testimonial.name}</h4>
-              </div>
-            ))}
-          </div>
+        <About/>
         </div>
-      </section>
-      <Services/>
-      <SkillMarquee/>
-      <Coaching/>
-      <Portfolio/>
-      <Contact/>
 
+                {/* Services Section with Animated Background */}
+        <div className="relative z-0">
+          <div className="absolute inset-0 -z-10 pointer-events-none">
+            <div className="w-80 h-80 bg-[#FFC107] opacity-10 rounded-full absolute top-1/3 left-1/4 blur-3xl 
+        animate-pulse" data-aos="fade-right"></div>
+            <div className="w-96 h-96 bg-[#7C4DFF] opacity-10 rounded-full absolute top-2/3 right-1/3 blur-3xl 
+        animate-pulse delay-500" data-aos="fade-left"></div>
+            <div className="w-72 h-72 bg-[#18FFFF] opacity-10 rounded-full absolute bottom-10 left-1/2 
+        transform -translate-x-1/2 blur-3xl animate-pulse delay-1000" data-aos="zoom-in"></div>
+          </div>
+          <Services/>
+          </div>
+
+
+          {/* Services Section with Animated Background */}
+        <div className="relative z-0">
+          <div className="absolute inset-0 -z-10 pointer-events-none">
+            <div className="w-80 h-80 bg-[#FFC107] opacity-10 rounded-full absolute top-1/3 left-1/4 blur-3xl animate-pulse" data-aos="fade-right"></div>
+            <div className="w-96 h-96 bg-[#7C4DFF] opacity-10 rounded-full absolute top-2/3 right-1/3 blur-3xl  animate-pulse delay-500" data-aos="fade-left"></div>
+            <div className="w-72 h-72 bg-[#18FFFF] opacity-10 rounded-full absolute bottom-10 left-1/2 
+        transform -translate-x-1/2 blur-3xl animate-pulse delay-1000" data-aos="zoom-in"></div>
+          </div>
+          <Coaching />
+          </div>
+          <Contact />
+         
+
+      
     </div>
   );
 };

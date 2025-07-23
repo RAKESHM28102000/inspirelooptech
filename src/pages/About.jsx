@@ -66,6 +66,115 @@ const About = () => {
           </div>
         </div>
       </section>
+        {/* Features Section */}
+  <section className="bg-[#1E1E1E] py-16" data-aos="fade-right">
+    <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
+      {[
+        {
+          title: 'Website & App Creation',
+          desc: 'Responsive, scalable websites and apps tailored to your business goals.',
+          color: 'hover:shadow-[#00C8FF]'
+        },
+        {
+          title: 'Brand Identity & Design',
+          desc: 'From logos to full branding, we deliver strong visual impact.',
+          color: 'hover:shadow-[#FF4081]'
+        },
+        {
+          title: 'IT & Design Coaching',
+          desc: 'We train rural students in web, design, and digital skills for the future.',
+          color: 'hover:shadow-[#00E676]'
+        },
+      ].map((item, idx) => (
+        <div
+          key={idx}
+          className={`bg-[#121212] rounded p-6 border border-[#444444] transition-all duration-300 
+transform hover:scale-105 ${item.color} hover:shadow-lg`}
+        >
+          <h3 className="text-xl font-semibold text-[#E0E0E0] mb-2">{item.title}</h3>
+          <p className="text-[#B0B0B0]">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+  {/* About Section */}
+  <section className="bg-[#121212] py-20 px-4 text-center" data-aos="fade-up">
+    <div className="max-w-4xl mx-auto">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#E0E0E0] mb-4">About Our Mission</h2>
+      <p className="text-[#B0B0B0] text-lg leading-relaxed">
+        Our startup focuses first on building powerful digital identities — through websites, design, and 
+branding — and then extends its impact by educating and uplifting rural youth in tech and design.
+      </p>
+    </div>
+  </section>
+  {/* Impact Section */}
+  <section className="bg-[#1E1E1E] py-16 px-4" data-aos="fade-up">
+    <div className="max-w-6xl mx-auto text-center">
+      <h2 className="text-3xl font-bold text-[#E0E0E0] mb-8">Our Reach</h2>
+      <div className="grid md:grid-cols-4 gap-6">
+        {[
+          { number: '10+', label: 'Design Projects Completed' },
+          { number: '3+', label: 'Websites Delivered' },
+          { number: '1', label: 'Rural Hubs Launched' },
+          { number: '6+', label: 'Students Trained' },
+        ].map((stat, idx) => (
+          <div key={idx} className="bg-[#121212] rounded-lg p-6 border border-[#444444] hover:shadow-md hover:shadow-[#888] transition-all duration-300">
+            <h3 className="text-3xl font-bold text-[#E0E0E0] mb-2">{stat.number}</h3>
+            <p className="text-[#B0B0B0] text-sm uppercase tracking-wide">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  {/* Testimonials Section */}
+  <section className="bg-[#121212] py-20 px-4" data-aos="fade-up">
+    <div className="max-w-5xl mx-auto text-center">
+      <h2 className="text-3xl font-bold text-[#E0E0E0] mb-12">Client & Learner Feedback</h2>
+      <div className="grid md:grid-cols-2 gap-8">
+        {[
+          {
+            name: 'Peter P.',
+            message: 'Amazing branding work! My startup now looks premium and professional.',
+          },
+          {
+            name: 'Prem kumar D.',
+            message: 'I learned web design from their coaching program and now freelance full-time.',
+          },
+        ].map((testimonial, idx) => (
+          <div key={idx} className="bg-[#1E1E1E] border border-[#444444] rounded p-6 shadow-md hover:shadow-[#aaa] transition duration-300">
+            <p className="text-[#B0B0B0] mb-4 italic">"{testimonial.message}"</p>
+            <h4 className="text-[#E0E0E0] font-semibold">- {testimonial.name}</h4>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  {/* About Me Section */}
+<section className="bg-[#1E1E1E] py-20 px-4" data-aos="fade-up">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <div className="w-full">
+      <img
+        src="./image/rakesh.jpeg" // Replace with your actual image path
+        alt="Rakesh M"
+        className="rounded-xl shadow-md w-full object-cover h-auto"
+      />
+    </div>
+    <div>
+      <h2 className="text-3xl font-bold text-[#E0E0E0] mb-4">About Me</h2>
+      <p className="text-[#B0B0B0] text-lg leading-relaxed mb-4">
+        I’m Rakesh M, an MBA student at the University of Madras, specializing in Human Resource Management and Marketing.
+        My passion lies in blending creativity and technology to make a social impact, particularly in empowering rural youth through IT and design education.
+      </p>
+      <p className="text-[#B0B0B0] text-lg leading-relaxed mb-4">
+        I’ve completed internships in HR, gained certifications in Graphic Design, Java Development, Excel, and HR Analytics, and launched <strong>Rakesh Creative Graphics</strong> — a startup focused on digital branding and design.
+      </p>
+      <p className="text-[#B0B0B0] text-lg leading-relaxed">
+        My mission is to build a bridge between innovation and opportunity, starting from rural communities and expanding toward a future where everyone can thrive with the right digital tools and knowledge.
+      </p>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };

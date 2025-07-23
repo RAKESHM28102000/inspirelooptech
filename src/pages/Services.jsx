@@ -1,128 +1,148 @@
-import React from 'react';
-
-const services = [
-  {
-    title: 'Web Development',
-    desc: 'React, WordPress, E-Commerce, Custom Apps',
-    content: [
-      {
-        subtitle: 'Responsive Design',
-        text: 'We ensure your website looks great on all devices using modern responsive frameworks.',
-      },
-      {
-        subtitle: 'Frontend & Backend',
-        text: 'Using React, Tailwind, and backend stacks, we develop complete solutions that scale.',
-      },
-      {
-        subtitle: 'SEO Optimization',
-        text: 'We implement SEO strategies to ensure better ranking and visibility.',
-      },
-    ],
-    image: './image/img/laptop-1.jpg',
-  },
-  {
-    title: 'Graphic Design',
-    desc: 'Posters, Logos, Branding, UI Design',
-    content: [
-      {
-        subtitle: 'Brand Identity',
-        text: 'We create logos, branding kits, and style guides that represent your business core.',
-      },
-      {
-        subtitle: 'Marketing Collaterals',
-        text: 'Designs for social media, brochures, posters that captivate and convert.',
-      },
-      {
-        subtitle: 'UI/UX Wireframes',
-        text: 'Prototypes and wireframes for web and app interfaces focused on usability.',
-      },
-    ],
-    image: './image/img/element-1.jpg',
-  },
-  {
-    title: 'Video Editing',
-    desc: 'Corporate Videos, Reels, Product Demos',
-    content: [
-      {
-        subtitle: 'Social Media Reels',
-        text: 'Engaging reels for Instagram, YouTube Shorts, and Facebook stories.',
-      },
-      {
-        subtitle: 'Corporate Presentations',
-        text: 'Well-edited business explainers with subtitles, transitions, and branding.',
-      },
-      {
-        subtitle: 'Product & Promo Videos',
-        text: 'Highlight your services with cinematic cuts, animations, and music.',
-      },
-    ],
-    image: './image/img/ai-1.jpg',
-  },
-  {
-    title: 'AI App Development',
-    desc: 'Chatbots, Smart Tools, Predictive Platforms',
-    content: [
-      {
-        subtitle: 'AI Chatbots',
-        text: 'Integrate intelligent bots that interact with users using NLP and ML.',
-      },
-      {
-        subtitle: 'Smart Recommendation Systems',
-        text: 'We build AI tools that learn user behavior and give real-time suggestions.',
-      },
-      {
-        subtitle: 'Automation Tools',
-        text: 'From data entry to customer support, we automate workflows with AI.',
-      },
-    ],
-    image: './image/img/robot-3.jpg',
-  },
-];
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Typewriter from "typewriter-effect";
 
 const Services = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
-    <div className="space-y-16 pt-12">
-      {/* Section Header */}
-      <section className="bg-[#121212] text-center py-16 px-4" data-aos="fade-up">
-        <h2 className="text-4xl font-bold text-[#E0E0E0] mb-4">Our Core Services</h2>
-        <p className="text-[#B0B0B0] max-w-xl mx-auto">
-          Explore our specialized digital services that help businesses scale with design, code, and innovation.
+    <div className="bg-[#0F0F0F] text-white relative overflow-hidden">
+      {/* Animated Background Circles */}
+      <div className="absolute top-0 left-0 w-full h-full z-0">
+        <div className="absolute w-80 h-80 bg-[#00FFC3]/20 rounded-full blur-3xl animate-pulse top-10 left-10"></div>
+        <div className="absolute w-60 h-60 bg-[#5F0FFF]/20 rounded-full blur-2xl animate-spin top-40 right-10"></div>
+      </div>
+
+      {/* Hero Section */}
+      <section className="min-h-screen flex flex-col items-center justify-center px-6 z-10 relative text-center">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          We Build Future-Ready&nbsp;
+          <span className="text-[#00FFC3]">
+            <Typewriter
+              options={{
+                strings: [
+                  "Websites",
+                  "AI Apps",
+                  "Graphics",
+                  "Posters",
+                  "Logos",
+                  "Reels",
+                  "E-Commerce Sites",
+                ],
+                autoStart: true,
+                loop: true,
+              }}
+            />
+          </span>
+        </h1>
+        <p className="text-lg md:text-xl text-[#CCCCCC] max-w-2xl mb-6">
+          Elevating your business with smart, stunning, and scalable solutions.
         </p>
+        <a
+          href="#services"
+          className="mt-4 px-6 py-3 bg-[#00FFC3] text-black rounded-full font-semibold hover:bg-[#00e6b8] transition"
+        >
+          View Our Services
+        </a>
       </section>
 
       {/* Services Section */}
-      <section className="bg-[#1E1E1E] py-16 px-4">
-        <div className="max-w-6xl mx-auto space-y-24">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className={`flex flex-col md:flex-row ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''} items-center gap-10`}
-              data-aos="fade-up"
-            >
-              {/* Image Section */}
-              <div className="w-full md:w-1/2 hover:shadow-2xl transition-shadow duration-300 ease-in-out">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-auto rounded-xl border border-[#444444] shadow-md hover:scale-105 transition-transform duration-300"
-                />
+      <section className="py-20 px-6" id="services">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-10" data-aos="fade-up">
+            Our Services
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Web Development",
+                desc: "React, WordPress, E-Commerce, Custom Apps",
+              },
+              {
+                title: "Graphic Design",
+                desc: "Logos, Posters, Branding, Packaging",
+              },
+              {
+                title: "Video Editing",
+                desc: "Reels, Shorts, Promo Videos, YouTube",
+              },
+              {
+                title: "AI App Development",
+                desc: "Chatbots, Automation, Custom AI Tools",
+              },
+            ].map((service, i) => (
+              <div
+                key={i}
+                className="bg-[#1C1C1C] p-8 rounded-xl border border-[#333] hover:shadow-xl transition"
+                data-aos="fade-up"
+                data-aos-delay={i * 100}
+              >
+                <h3 className="text-2xl font-semibold mb-2 text-[#00FFC3]">
+                  {service.title}
+                </h3>
+                <p className="text-[#B0B0B0]">{service.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              {/* Content Section */}
-              <div className="w-full md:w-1/2 bg-[#121212] p-8 rounded-xl border border-[#444444] shadow-sm hover:shadow-lg transition-shadow duration-300">
-                <h3 className="text-3xl font-semibold text-[#E0E0E0] mb-3">{service.title}</h3>
-                <p className="text-[#B0B0B0] italic mb-6">{service.desc}</p>
-                <div className="space-y-4">
-                  {service.content.map((sub, idx) => (
-                    <div key={idx}>
-                      <h4 className="text-xl text-[#E0E0E0] font-medium mb-1">{sub.subtitle}</h4>
-                      <p className="text-[#B0B0B0]">{sub.text}</p>
-                    </div>
+      {/* Pricing Section */}
+      <section className="py-20 px-6" id="pricing">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-[#E0E0E0] mb-6" data-aos="fade-up">
+            Affordable Pricing
+          </h2>
+          <p className="text-[#B0B0B0] max-w-2xl mx-auto mb-12" data-aos="fade-up">
+            Transparent and value-driven pricing tailored to your digital needs.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Web Development",
+                price: "₹2000 - ₹8000",
+                features: ["Responsive", "Frontend + Backend", "SEO Setup"],
+              },
+              {
+                title: "Graphic Design",
+                price: "₹1000 - ₹5000",
+                features: ["Logo", "Brand Kit", "Banners"],
+              },
+              {
+                title: "Video Editing",
+                price: "₹2,000 - ₹5,000",
+                features: ["Reels", "Corporate Edits", "Promos"],
+              },
+              {
+                title: "AI Apps",
+                price: "₹30,000 - ₹50,000",
+                features: ["Chatbot", "AI Tools", "Automation"],
+              },
+            ].map((plan, idx) => (
+              <div
+                key={idx}
+                className="bg-[#1C1C1C] p-8 rounded-xl border border-[#333] hover:shadow-lg transition"
+                data-aos="fade-up"
+                data-aos-delay={idx * 100}
+              >
+                <h3 className="text-2xl font-semibold mb-2 text-[#E0E0E0]">
+                  {plan.title}
+                </h3>
+                <p className="text-xl text-[#00FFC3] font-bold mb-4">{plan.price}</p>
+                <ul className="text-[#B0B0B0] space-y-2">
+                  {plan.features.map((f, i) => (
+                    <li key={i} className="flex justify-center items-center gap-2">
+                      <span className="text-[#00FFC3]">✔</span>
+                      {f}
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
     </div>
