@@ -14,19 +14,19 @@ const courses = [
     ],
   },
   {
-    title: 'Graphic Design & UI/UX',
+    title: 'Graphic Design',
     price: '₹499',
     duration: '3 to 6 months',
     placement: false,
     syllabus: [
       'Adobe Photoshop, Illustrator, InDesign',
-      'Canva, Figma',
+      'Canva',
       'Color Theory and Typography',
       'Design Thinking and Prototyping',
     ],
   },
   {
-    title: 'MS Excel, Power BI & Data Analytics',
+    title: 'MS Excel / Power BI / Data Analytics',
     price: '₹499',
     duration: '3 to 6 months',
     placement: false,
@@ -51,7 +51,7 @@ const courses = [
   },
   {
     title: 'Career Prep with Placement Support',
-    price: '₹5,000',
+    price: '₹3,000',
     duration: '3 to 6 months',
     placement: true,
     syllabus: [
