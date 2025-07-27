@@ -42,10 +42,10 @@ const Home = () => {
       {/* Hero Section with Text Transition */}
       <section className="py-24 px-4 flex items-center justify-center text-center min-h-screen" data-aos="fade-up">
         <div>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-[#E0E0E0] mb-10 leading-tight">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold text-[#E0E0E0] mb-10 leading-tight">
             We Create Stunning
           </h1>
-          <div className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#00C8FF] drop-shadow-md grid place-items-center uppercase">
+          <div className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold mb-10 leading-tight text-[#00C8FF] drop-shadow-md grid place-items-center ">
             <TextTransition springConfig={presets.gentle}>
               {TEXTS[index % TEXTS.length]}
             </TextTransition>
@@ -56,15 +56,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Section with Animated Background */}
-      <div className="relative z-0">
-        <div className="absolute inset-0 -z-10 pointer-events-none">
-          <div className="w-80 h-80 bg-[#FFC107] opacity-10 rounded-full absolute top-1/3 left-1/4 blur-3xl animate-pulse" data-aos="fade-right"></div>
-          <div className="w-96 h-96 bg-[#7C4DFF] opacity-10 rounded-full absolute top-2/3 right-1/3 blur-3xl animate-pulse delay-500" data-aos="fade-left"></div>
-          <div className="w-72 h-72 bg-[#18FFFF] opacity-10 rounded-full absolute bottom-10 left-1/2 transform -translate-x-1/2 blur-3xl animate-pulse delay-1000" data-aos="zoom-in"></div>
-        </div>
+      {/* about section */} 
         <About/>
-        </div>
+
 
                 {/* Services Section with Animated Background */}
         <div className="relative z-0">
@@ -78,8 +72,9 @@ const Home = () => {
           </div>
           <Services/>
           </div>
+          <SkillMarquee/>
 
-
+  
           {/* Services Section with Animated Background */}
         <div className="relative z-0">
           <div className="absolute inset-0 -z-10 pointer-events-none">

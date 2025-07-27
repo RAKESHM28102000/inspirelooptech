@@ -162,14 +162,14 @@ branding — and then extends its impact by educating and uplifting rural youth 
     <div>
       <h2 className="text-3xl font-bold text-[#E0E0E0] mb-4">About Me</h2>
       <p className="text-[#B0B0B0] text-lg leading-relaxed mb-4">
-        I’m Rakesh M, an MBA student at the University of Madras, specializing in Human Resource Management and Marketing.
-        My passion lies in blending creativity and technology to make a social impact, particularly in empowering rural youth through IT and design education.
-      </p>
+        I'm Rakesh M – Founder of Rakesh Inspireloop Tech
+I’m an MBA student specializing in Human Resource Management and Marketing at the University of Madras, with a deep passion for combining design, technology, and human insight to create meaningful digital experiences.
+My journey started with a Bachelor’s in Agricultural and Irrigation Engineering from Anna University, where I learned the value of structured thinking and technical problem-solving. But my creative instincts led me to explore the world of graphic design and web development, earning multiple certifications and working on real-time projects that allowed me to blend art with logic.           </p>
       <p className="text-[#B0B0B0] text-lg leading-relaxed mb-4">
-        I’ve completed internships in HR, gained certifications in Graphic Design, Java Development, Excel, and HR Analytics, and launched <strong>Rakesh Creative Graphics</strong> — a startup focused on digital branding and design.
+        I’ve completed internships in HR, gained certifications in Graphic Design,Web Development, and launched <strong>Rakesh InspireLoop Tech</strong> — a startup focused on digital branding and design.
       </p>
       <p className="text-[#B0B0B0] text-lg leading-relaxed">
-        My mission is to build a bridge between innovation and opportunity, starting from rural communities and expanding toward a future where everyone can thrive with the right digital tools and knowledge.
+        To empower individuals, startups, and organizations with digital tools that are not only visually stunning but also smart, scalable, and results-driven.To empower individuals, startups, and organizations with digital tools that are not only visually stunning but also smart, scalable, and results-driven.
       </p>
     </div>
   </div>

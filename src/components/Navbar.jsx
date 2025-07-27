@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '/image/Rakeshlogo3.png'; // Replace with your logo path
+import logo from '/image/Rakeshlogo1.png'; // Replace with your logo path
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +19,7 @@ const Navbar = () => {
         
         {/* Logo + Brand */}
         <Link to="/" className="flex items-center space-x-2">
-          <img src={logo} alt="Logo" className="h-7 w-7 bg-white border-1 border-white shadow-sm shadow-amber-300" />
+          <img src={logo} alt="Logo" className="h-7 w-8" />
           <span className="hidden lg:inline-block text-2xl font-bold text-[#E0E0E0]">InspireLoop</span>
         </Link>
 
