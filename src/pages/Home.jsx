@@ -2,7 +2,6 @@ import React from 'react';
 import Services from './Services';
 import Contact from './Contact';
 import Coaching from './Coaching';
-import Portfolio from './Portfolio';
 import SkillMarquee from './SkillMarquee';
 import TextTransition, { presets } from 'react-text-transition';
 import 'aos/dist/aos.css';

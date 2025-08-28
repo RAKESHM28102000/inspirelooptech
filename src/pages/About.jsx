@@ -137,7 +137,7 @@ branding — and then extends its impact by educating and uplifting rural youth 
             message: 'Amazing branding work! My startup now looks premium and professional.',
           },
           {
-            name: 'Prem kumar D.',
+            name: 'Prem kumar M.',
             message: 'I learned web design from their coaching program and now freelance full-time.',
           },
         ].map((testimonial, idx) => (
@@ -154,7 +154,7 @@ branding — and then extends its impact by educating and uplifting rural youth 
   <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
     <div className="w-full">
       <img
-        src="./image/rakesh.jpeg" // Replace with your actual image path
+        src="./image/rakesh.jpg" // Replace with your actual image path
         alt="Rakesh M"
         className="rounded-xl shadow-md w-full object-cover h-auto"
       />
