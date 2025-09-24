@@ -7,6 +7,8 @@ import TextTransition, { presets } from 'react-text-transition';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import About from './About';
+import Portfolio from './Portfolio';
+
 
 const TEXTS = [
   'Websites',
@@ -57,9 +59,10 @@ const Home = () => {
 
       {/* about section */} 
         <About/>
+      
 
 
-                {/* Services Section with Animated Background */}
+         {/* Services Section with Animated Background */}
         <div className="relative z-0">
           <div className="absolute inset-0 -z-10 pointer-events-none">
             <div className="w-80 h-80 bg-[#FFC107] opacity-10 rounded-full absolute top-1/3 left-1/4 blur-3xl 
@@ -72,8 +75,7 @@ const Home = () => {
           <Services/>
           </div>
           <SkillMarquee/>
-
-  
+           
           {/* Services Section with Animated Background */}
         <div className="relative z-0">
           <div className="absolute inset-0 -z-10 pointer-events-none">
@@ -84,6 +86,7 @@ const Home = () => {
           </div>
           <Coaching />
           </div>
+          <Portfolio/>
           <Contact />
          
 

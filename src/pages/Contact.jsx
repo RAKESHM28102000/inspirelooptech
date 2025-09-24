@@ -1,76 +1,82 @@
-import React, { useRef, useState } from 'react';
-import emailjs from 'emailjs-com';
+import React, { useRef, useState } from "react";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const form = useRef();
-  const [status, setStatus] = useState('Get in Touch');
+  const [status, setStatus] = useState("Get in Touch");
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setStatus('Sending...');
+    setStatus("Sending...");
 
     emailjs
-      .sendForm('service_h6eng78', 'template_c56l5np', form.current, 'RV5UEeN1IX6VKRKTl')
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
       .then(() => {
-        setStatus('Thank You for Your Message!');
+        setStatus("Thank You for Your Message!");
         form.current.reset();
       })
       .catch((error) => {
-        console.error('EmailJS Error:', error);
-        setStatus('Failed to Send. Try Again!');
+        console.error("EmailJS Error:", error);
+        setStatus("Failed to Send. Try Again!");
       });
   };
 
   return (
-    <div className="pt-16 px-4">
-      <section className="bg-[#1E1E1E] py-12" data-aos="fade-up">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          
-          {/* Contact Form */}
-          <form ref={form} onSubmit={sendEmail} className="space-y-5">
-            <h2 className="text-3xl font-bold text-[#E0E0E0] mb-2">{status}</h2>
-            <input
-              type="text"
-              name="user_name"
-              placeholder="Your Name"
-              required
-              className="w-full p-3 rounded bg-[#121212] border border-[#444444] text-[#E0E0E0]"
-            />
-            <input
-              type="email"
-              name="user_email"
-              placeholder="Your Email"
-              required
-              className="w-full p-3 rounded bg-[#121212] border border-[#444444] text-[#E0E0E0]"
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows="5"
-              required
-              className="w-full p-3 rounded bg-[#121212] border border-[#444444] text-[#E0E0E0]"
-            ></textarea>
-            <button
-              type="submit"
-              className="px-6 py-3 bg-[#888888] hover:bg-[#B0B0B0] text-black font-semibold rounded transition-all duration-300"
-            >
-              Send
-            </button>
-          </form>
+    <div className="pt-20 px-4 bg-[#1E1E1E] min-h-screen flex items-center">
+      <section className="w-full max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        
+        {/* Contact Form */}
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className="space-y-5 bg-[#121212] p-8 rounded-2xl shadow-lg w-full"
+        >
+          <h2 className="text-3xl font-bold text-[#E0E0E0] mb-4">{status}</h2>
 
-          {/* Google Map */}
-          <div className="w-full h-80 md:h-full">
+          <input
+            type="text"
+            name="user_name"
+            placeholder="Your Name"
+            required
+            className="w-full p-3 rounded-lg bg-[#1E1E1E] border border-[#444444] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-[#888888]"
+          />
+          <input
+            type="email"
+            name="user_email"
+            placeholder="Your Email"
+            required
+            className="w-full p-3 rounded-lg bg-[#1E1E1E] border border-[#444444] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-[#888888]"
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            required
+            className="w-full p-3 rounded-lg bg-[#1E1E1E] border border-[#444444] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-[#888888]"
+          ></textarea>
+
+          <button
+            type="submit"
+            className="w-full px-6 py-3 bg-[#888888] hover:bg-[#B0B0B0] text-black font-semibold rounded-lg transition-all duration-300"
+          >
+            Send
+          </button>
+        </form>
+
+        {/* Google Map */}
+        <div className="w-full h-80 md:h-full">
           <iframe
-          title="Meyyur Village Location"
-          className="w-full h-full rounded border border-[#444444]"
-          src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d500.85849864615454!2d79.94218286214058!3d12.6610973732057!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1752931988924!5m2!1sen!2sin"
-          allowFullScreen=""
-          loading="lazy"
-        ></iframe>
-  
-
-          </div>
-
+            title="Location"
+            className="w-full h-full rounded-2xl border border-[#444444]"
+            src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d500.85849864615454!2d79.94218286214058!3d12.6610973732057!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1752931988924!5m2!1sen!2sin"
+            allowFullScreen=""
+            loading="lazy"
+          ></iframe>
         </div>
       </section>
     </div>
