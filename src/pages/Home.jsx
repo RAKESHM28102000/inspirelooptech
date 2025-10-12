@@ -9,7 +9,6 @@ import AOS from 'aos';
 import About from './About';
 import Portfolio from './Portfolio';
 
-
 const TEXTS = [
   'Websites',
   'Branding',
@@ -30,15 +29,7 @@ const Home = () => {
 
   return (
     <div className="relative space-y-20 pt-12 bg-[#121212] text-white overflow-hidden">
-      {/* Animated Background with Gradient and Transition */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="w-full h-full bg-gradient-to-tr from-[#0f0f0f] via-[#1e1e1e] to-[#121212] animate-gradient bg-cover bg-no-repeat transition-all duration-1000 ease-in-out" style={{ maskImage: 'radial-gradient(circle at center, rgba(0,0,0,1), rgba(0,0,0,0.2))' }}></div>
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-          <div className="w-80 h-80 bg-[#00C8FF] opacity-20 rounded-full absolute -top-20 -left-20 blur-3xl animate-bounce" data-aos="zoom-in"></div>
-          <div className="w-96 h-96 bg-[#FF4081] opacity-20 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse" data-aos="fade-up"></div>
-          <div className="w-72 h-72 bg-[#00E676] opacity-20 rounded-full absolute -bottom-16 -right-16 blur-3xl animate-spin-slow" data-aos="zoom-out"></div>
-        </div>
-      </div>
+
 
       {/* Hero Section with Text Transition */}
       <section className="py-24 px-4 flex items-center justify-center text-center min-h-screen" data-aos="fade-up">
@@ -58,6 +49,7 @@ const Home = () => {
       </section>
 
       {/* about section */} 
+
         <About/>
       
 

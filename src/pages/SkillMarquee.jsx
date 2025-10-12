@@ -21,23 +21,38 @@ const SkillMarquee = () => {
     <section className="bg-[#121212] py-12 overflow-hidden">
       <h2 className="text-3xl text-center text-[#E0E0E0] font-bold mb-8">Our Tech & Design Stack</h2>
 
-      <div className="relative w-full">
-        <div className="animate-marquee flex space-x-12 w-max">
-          {skills.concat(skills).map((skill, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center hover:scale-110 transition-transform duration-300"
-            >
-              <img
-                src={skill.icon}
-                alt={skill.name}
-                className="w-16 h-16 md:w-20 md:h-20 object-contain"
-              />
-              <p className="text-[#B0B0B0] mt-2 text-sm md:text-base">{skill.name}</p>
-            </div>
-          ))}
+      <div className="relative w-full flex justify-center">
+        {/* Container width constrained to 80% */}
+        <div className="w-4/5 overflow-hidden relative">
+          <div className="flex space-x-12 animate-marquee w-max">
+            {skills.concat(skills).map((skill, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center hover:scale-110 transition-transform duration-300"
+              >
+                <img
+                  src={skill.icon}
+                  alt={skill.name}
+                  className="w-16 h-16 md:w-20 md:h-20 object-contain"
+                />
+                <p className="text-[#B0B0B0] mt-2 text-sm md:text-base">{skill.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+
+      {/* Tailwind animation for marquee */}
+      <style jsx>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          display: flex;
+          animation: marquee 25s linear infinite;
+        }
+      `}</style>
     </section>
   );
 };

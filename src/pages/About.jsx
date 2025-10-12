@@ -12,22 +12,79 @@ const About = () => {
       </section>
 
       {/* Vision & Mission */}
-      <section className="bg-[#121212] py-16 px-4" data-aos="fade-up">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-          <div className="space-y-4">
-            <h3 className="text-3xl text-[#E0E0E0] font-semibold">Our Vision</h3>
-            <p className="text-[#B0B0B0] text-lg">
-              To empower rural talents by bridging the gap between innovation and opportunity, enabling them to compete globally with confidence and skill.
-            </p>
-          </div>
-          <div className="space-y-4">
-            <h3 className="text-3xl text-[#E0E0E0] font-semibold">Our Mission</h3>
-            <p className="text-[#B0B0B0] text-lg">
-              InspireLoop exists to build impactful digital solutions, offer professional coaching in IT and design, and uplift communities by training the next generation of developers, designers, and data thinkers from underrepresented regions.
-            </p>
+      {/* Vision & Mission section — boxed cards with hover transitions */}
+<section className="py-16 px-4">
+  <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-2 items-stretch">
+    {/* Vision */}
+    <div
+      className="bg-[#121212] border border-[#2a2a2a] rounded-2xl p-8 transform transition-transform duration-400 
+       hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#00C8FF]/20"
+      data-aos="fade-right"
+    >
+      <div className="flex items-start gap-4">
+        <div className="flex-shrink-0">
+          <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-[#00C8FF] to-[#7C4DFF] grid place-items-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="">
+              <path d="M12 2L20 8v8l-8 6-8-6V8l8-6z" stroke="white" strokeWidth="0.8" strokeLinecap="round" 
+           strokeLinejoin="round" />
+            </svg>
           </div>
         </div>
-      </section>
+        <div>
+          <h3 className="text-2xl font-semibold text-[#E0E0E0] mb-3">Our Vision</h3>
+          <p className="text-[#B0B0B0] leading-relaxed">
+            To empower rural talents by bridging the gap between innovation and opportunity — enabling them to compete 
+           globally with confidence and skill.
+          </p>
+        </div>
+      </div>
+      {/* feature bullets */}
+      <div className="mt-6 grid sm:grid-cols-2 gap-4">
+        <div className="p-4 rounded-lg bg-[#0f0f0f] border border-[#2f2f2f] transition-colors hover:bg-[#001b27]">
+          <h4 className="text-[#E0E0E0] font-medium">Inclusive Education</h4>
+          <p className="text-[#B0B0B0] text-sm mt-1">Training for students from underrepresented regions.</p>
+        </div>
+        <div className="p-4 rounded-lg bg-[#0f0f0f] border border-[#2f2f2f] transition-colors hover:bg-[#001b27]">
+          <h4 className="text-[#E0E0E0] font-medium">Global Mindset</h4>
+          <p className="text-[#B0B0B0] text-sm mt-1">Skills and standards to compete internationally.</p>
+        </div>
+      </div>
+    </div>
+    {/* Mission */}
+    <div
+      className="bg-[#121212] border border-[#2a2a2a] rounded-2xl p-8 transform transition-transform duration-400 
+        hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#FF4081]/20"
+      data-aos="fade-left"
+    >
+      <div className="flex items-start gap-4">
+        <div className="flex-shrink-0">
+          <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-[#FF4081] to-[#FFC107] grid place-items-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="">
+              <path d="M12 3v18M3 12h18" stroke="white" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <h3 className="text-2xl font-semibold text-[#E0E0E0] mb-3">Our Mission</h3>
+          <p className="text-[#B0B0B0] leading-relaxed">
+            Build impactful digital solutions, deliver professional coaching in IT and design, and uplift communities by 
+           training the next generation of developers, designers, and data thinkers from underrepresented regions.
+          </p>
+        </div>
+      </div>
+      <div className="mt-6 grid sm:grid-cols-2 gap-4">
+        <div className="p-4 rounded-lg bg-[#0f0f0f] border border-[#2f2f2f] transition-colors hover:bg-[#3b0027]">
+          <h4 className="text-[#E0E0E0] font-medium">Hands-on Learning</h4>
+          <p className="text-[#B0B0B0] text-sm mt-1">Project-based coaching for real-world readiness.</p>
+        </div>
+        <div className="p-4 rounded-lg bg-[#0f0f0f] border border-[#2f2f2f] transition-colors hover:bg-[#3b0027]">
+          <h4 className="text-[#E0E0E0] font-medium">Social Impact</h4>
+          <p className="text-[#B0B0B0] text-sm mt-1">Sustainable programs to create long-term change.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
 
       {/* Our Story */}
       <section className="bg-[#1E1E1E] py-16 px-4" data-aos="fade-up">

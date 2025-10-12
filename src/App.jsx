@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import { ArrowUpCircleIcon } from '@heroicons/react/24/solid';
+import ErrorPage from './pages/ErrorPage';
 
 const App = () => {
   const [showButton, setShowButton] = useState(false);
@@ -43,6 +44,9 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<Home />} />
+          {/* Error & Fallback */}
+          <Route path="/error" element={<ErrorPage/>} />
+          <Route path="*" element={<Navigate to="/error" replace />} />
         </Routes>
       </div>
       <Footer />
