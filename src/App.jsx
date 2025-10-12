@@ -43,7 +43,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="*" element={<Home />} />
+      
           {/* Error & Fallback */}
           <Route path="/error" element={<ErrorPage/>} />
           <Route path="*" element={<Navigate to="/error" replace />} />
