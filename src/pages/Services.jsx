@@ -1,150 +1,181 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Typewriter from "typewriter-effect";
 
 const Services = () => {
+  const [firstVisit, setFirstVisit] = useState(false);
+  const [showHeroAnimation, setShowHeroAnimation] = useState(false);
+
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    // Check if this is the user's first visit
+    const hasVisited = localStorage.getItem("servicesPageVisited");
+
+    if (!hasVisited) {
+      setFirstVisit(true);
+      setShowHeroAnimation(true);
+      AOS.init({ duration: 1000, once: true });
+      localStorage.setItem("servicesPageVisited", "true");
+
+      // Stop the hero animation after a few seconds
+      setTimeout(() => setShowHeroAnimation(false), 4000);
+    }
   }, []);
 
-  return (
-    <div className="bg-[#0F0F0F] text-white relative overflow-hidden">
-      {/* Animated Background Circles */}
-      <div className="absolute top-0 left-0 w-full h-full z-0">
-        <div className="absolute w-80 h-80 bg-[#00FFC3]/20 rounded-full blur-3xl animate-pulse top-10 left-10"></div>
-        <div className="absolute w-60 h-60 bg-[#5F0FFF]/20 rounded-full blur-2xl animate-spin top-40 right-10"></div>
-      </div>
+  // ===== Data Arrays =====
+  const websiteTypes = [
+    { title: "Static Website", desc: "Fast, SEO-friendly websites ideal for portfolios and small businesses.", price: "₹3,000 - ₹5,000", img: "https://cdn-icons-png.flaticon.com/512/1055/1055687.png" },
+    { title: "Dynamic Website", desc: "Interactive sites with CMS and database integration.", price: "₹5,000 - ₹9,000", img: "https://cdn-icons-png.flaticon.com/512/906/906343.png" },
+    { title: "AI Integrated Website", desc: "AI-powered sites with chatbots and automation tools.", price: "₹15,000 - ₹25,000", img: "https://cdn-icons-png.flaticon.com/512/4712/4712108.png" },
+  ];
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 z-10 relative text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          We Build Future-Ready&nbsp;
-          <span className="text-[#00FFC3]">
-            <Typewriter
-              options={{
-                strings: [
-                  "Websites",
-                  "AI Apps",
-                  "Graphics",
-                  "Posters",
-                  "Logos",
-                  "Reels",
-                  "E-Commerce Sites",
-                ],
-                autoStart: true,
-                loop: true,
-              }}
+  const graphicDesign = [
+    { title: "Logo Design", desc: "Professional logos with brand identity guidelines.", price: "₹800 - ₹2,000", img: "https://cdn-icons-png.flaticon.com/512/2920/2920215.png" },
+    { title: "Poster Design", desc: "Creative posters, social media banners, and print-ready designs.", price: "₹500 - ₹1,500", img: "https://cdn-icons-png.flaticon.com/512/4149/4149755.png" },
+    { title: "Brand Kit", desc: "Logo, typography, color palette, and mockups.", price: "₹2,000 - ₹4,000", img: "https://cdn-icons-png.flaticon.com/512/9303/9303739.png" },
+  ];
+
+  const videoEditing = [
+    { title: "Reels & Shorts", desc: "Fast-paced, trendy edits for social media.", price: "₹400 - ₹1,000 per reel", img: "https://cdn-icons-png.flaticon.com/512/4221/4221447.png" },
+    { title: "Corporate Videos", desc: "Professional edits for events or product launches.", price: "₹3,000 - ₹6,000", img: "https://cdn-icons-png.flaticon.com/512/2920/2920122.png" },
+    { title: "Promo Videos", desc: "Cinematic edits with music and effects.", price: "₹2,000 - ₹5,000", img: "https://cdn-icons-png.flaticon.com/512/906/906175.png" },
+  ];
+
+  const mobileApps = [
+    { title: "Basic App", desc: "Cross-platform app for startups.", price: "₹15,000 - ₹25,000", img: "https://cdn-icons-png.flaticon.com/512/4727/4727331.png" },
+    { title: "E-Commerce App", desc: "App with cart, payments, and notifications.", price: "₹40,000 - ₹60,000", img: "https://cdn-icons-png.flaticon.com/512/4326/4326620.png" },
+    { title: "AI Mobile App", desc: "Mobile apps with AI chatbots and analytics.", price: "₹50,000 - ₹80,000", img: "https://cdn-icons-png.flaticon.com/512/4712/4712069.png" },
+  ];
+
+  // ===== Reusable Grid Component =====
+  const renderServiceGrid = (services, gradientClass, shadowColor) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+      {services.map((service, i) => (
+        <div
+          key={i}
+          {...(firstVisit && { "data-aos": "fade-up", "data-aos-delay": i * 150 })}
+          className={`group bg-[#121212] p-6 rounded-2xl border border-[#2a2a2a] text-center hover:scale-105 transition-transform duration-500 hover:shadow-[0_0_30px_${shadowColor}] relative overflow-hidden`}
+        >
+          <div className={`absolute inset-0 bg-gradient-to-tr ${gradientClass} opacity-0 group-hover:opacity-100 blur-2xl transition-all duration-700`}></div>
+          <div className="relative z-10 mb-6 flex justify-center">
+            <img
+              src={service.img}
+              alt={service.title}
+              className="w-16 h-16 object-contain drop-shadow-lg transition-transform duration-500 group-hover:scale-110"
             />
+          </div>
+          <div className="relative z-10">
+            <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-[#00FFC3] via-[#5F0FFF] to-[#00FFC3] bg-clip-text text-transparent">
+              {service.title}
+            </h3>
+            <p className="text-[#B0B0B0] mb-3 text-sm">{service.desc}</p>
+            <p className="text-lg font-semibold text-[#00FFC3]">{service.price}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
+  // ===== Section Block =====
+  const ServiceSection = ({ title, image, services, gradient, shadow, reverse }) => (
+    <section className="py-20 px-6 flex justify-center">
+      <div
+        className={`w-full md:w-4/5 bg-[#0f0f0f] border border-[#1e1e1e] rounded-3xl shadow-[0_0_40px_rgba(95,15,255,0.2)] overflow-hidden flex flex-col ${
+          reverse ? "md:flex-row-reverse" : "md:flex-row"
+        } items-center gap-10 p-8 md:p-14`}
+        {...(firstVisit && { "data-aos": reverse ? "fade-left" : "fade-right" })}
+      >
+        {/* Image Side */}
+        <div className="flex-1 flex justify-center items-center">
+          <div className="relative">
+            <img
+              src={image}
+              alt={title}
+              className="rounded-2xl w-72 md:w-[360px] hover:scale-105 transition-transform duration-700 ease-in-out shadow-[0_0_25px_rgba(0,255,195,0.4)]"
+              {...(firstVisit && { "data-aos": "zoom-in" })}
+            />
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#00FFC3]/10 to-[#5F0FFF]/10 blur-3xl opacity-70 animate-pulse"></div>
+          </div>
+        </div>
+
+        {/* Text & Cards */}
+        <div className="flex-1 text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-[#00FFC3] via-[#5F0FFF] to-[#00FFC3] bg-clip-text text-transparent">
+            {title}
+          </h2>
+          {renderServiceGrid(services, gradient, shadow)}
+        </div>
+      </div>
+    </section>
+  );
+
+  return (
+    <div className="bg-[#0A0A0A] text-white relative overflow-hidden">
+      {/* === Cinematic Background Pulse (First Visit Only) === */}
+      {showHeroAnimation && (
+        <div className="absolute inset-0 bg-gradient-to-br from-[#5F0FFF]/20 via-[#00FFC3]/20 to-[#5F0FFF]/20 animate-pulse blur-3xl"></div>
+      )}
+
+      {/* === Hero Section === */}
+      <section
+        className={`min-h-[80vh] flex flex-col justify-center items-center text-center relative z-10 px-6 transition-all duration-1000 ${
+          showHeroAnimation ? "scale-95 opacity-0 animate-fade-in" : "opacity-100 scale-100"
+        }`}
+      >
+        <h1 className="text-5xl md:text-9xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-[#00FFC3] via-[#5F0FFF] to-[#00FFC3] bg-clip-text text-transparent transition-transform duration-1000 animate-zoom-in">
+          We Create&nbsp;
+          <span className="text-[#00FFC3]">
+            {firstVisit ? (
+              <Typewriter
+                options={{
+                  strings: ["Websites", "AI Apps", "Graphics", "Videos", "E-Commerce"],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            ) : (
+              "Digital Experiences"
+            )}
           </span>
         </h1>
-        <p className="text-lg md:text-xl text-[#CCCCCC] max-w-2xl mb-6">
-          Elevating your business with smart, stunning, and scalable solutions.
+        <p className="text-[#CCCCCC] max-w-2xl mb-8 text-lg md:text-xl animate-fade-in">
+          Transforming your ideas into intelligent, scalable, and stunning digital experiences.
         </p>
-        <a
-          href="#services"
-          className="mt-4 px-6 py-3 bg-[#00FFC3] text-black rounded-full font-semibold hover:bg-[#00e6b8] transition"
-        >
-          View Our Services
-        </a>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 px-6" id="services">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-10" data-aos="fade-up">
-            Our Services
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Web Development",
-                desc: "React, WordPress, E-Commerce, Custom Apps",
-              },
-              {
-                title: "Graphic Design",
-                desc: "Logos, Posters, Branding, Packaging",
-              },
-              {
-                title: "Video Editing",
-                desc: "Reels, Shorts, Promo Videos, YouTube",
-              },
-              {
-                title: "AI App Development",
-                desc: "Chatbots, Automation, Custom AI Tools",
-              },
-            ].map((service, i) => (
-              <div
-                key={i}
-                className="bg-[#1C1C1C] p-8 rounded-xl border border-[#333] hover:shadow-xl transition"
-                data-aos="fade-up"
-                data-aos-delay={i * 100}
-              >
-                <h3 className="text-2xl font-semibold mb-2 text-[#00FFC3]">
-                  {service.title}
-                </h3>
-                <p className="text-[#B0B0B0]">{service.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="py-20 px-6" id="pricing">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-[#E0E0E0] mb-6" data-aos="fade-up">
-            Affordable Pricing
-          </h2>
-          <p className="text-[#B0B0B0] max-w-2xl mx-auto mb-12" data-aos="fade-up">
-            Transparent and value-driven pricing tailored to your digital needs.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Web Development",
-                price: "₹2000 - ₹8000",
-                features: ["Responsive", "Frontend + Backend", "SEO Setup"],
-              },
-              {
-                title: "Graphic Design",
-                price: "₹1000 - ₹5000",
-                features: ["Logo", "Brand Kit", "Banners"],
-              },
-              {
-                title: "Video Editing",
-                price: "₹2,000 - ₹5,000",
-                features: ["Reels", "Corporate Edits", "Promos"],
-              },
-              {
-                title: "AI Apps",
-                price: "₹30,000 - ₹50,000",
-                features: ["Chatbot", "AI Tools", "Automation"],
-              },
-            ].map((plan, idx) => (
-              <div
-                key={idx}
-                className="bg-[#1C1C1C] p-8 rounded-xl border border-[#333] hover:shadow-lg transition"
-                data-aos="fade-up"
-                data-aos-delay={idx * 100}
-              >
-                <h3 className="text-2xl font-semibold mb-2 text-[#E0E0E0]">
-                  {plan.title}
-                </h3>
-                <p className="text-xl text-[#00FFC3] font-bold mb-4">{plan.price}</p>
-                <ul className="text-[#B0B0B0] space-y-2">
-                  {plan.features.map((f, i) => (
-                    <li key={i} className="flex justify-center items-center gap-2">
-                      <span className="text-[#00FFC3]">✔</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* === Alternating Sections === */}
+      <ServiceSection
+        title="Website Development"
+        image="/image/img/laptop-2.jpg"
+        services={websiteTypes}
+        gradient="from-[#00FFC3]/10 via-[#5F0FFF]/10 to-[#00FFC3]/10"
+        shadow="#00FFC3"
+        reverse={false}
+      />
+      <ServiceSection
+        title="Graphic Design"
+        image="/image/img/element-2.jpg"
+        services={graphicDesign}
+        gradient="from-[#B388FF]/10 via-[#7C4DFF]/10 to-[#00C8FF]/10"
+        shadow="#B388FF"
+        reverse={true}
+      />
+      <ServiceSection
+        title="Video Editing"
+        image="/image/img/element-3.jpg"
+        services={videoEditing}
+        gradient="from-[#E040FB]/10 via-[#9C27B0]/10 to-[#7C4DFF]/10"
+        shadow="#E040FB"
+        reverse={false}
+      />
+      <ServiceSection
+        title="Mobile App Development"
+        image="/image/img/laptop-1.jpg"
+        services={mobileApps}
+        gradient="from-[#448AFF]/10 via-[#3D5AFE]/10 to-[#82B1FF]/10"
+        shadow="#448AFF"
+        reverse={true}
+      />
     </div>
   );
 };

@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import { ArrowUpCircleIcon } from '@heroicons/react/24/solid';
 import ErrorPage from './pages/ErrorPage';
+import FloatingButtons from './components/FloatingButtons';
 
 const App = () => {
   const [showButton, setShowButton] = useState(false);
@@ -50,6 +51,8 @@ const App = () => {
         </Routes>
       </div>
       <Footer />
+         {/* ✅ Floating WhatsApp & Call Buttons */}
+      <FloatingButtons/>
 
       {/* Scroll to Top Button */}
       {showButton && (

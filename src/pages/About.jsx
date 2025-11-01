@@ -1,4 +1,5 @@
 import React from 'react';
+import CountUp from "react-countup"; 
 
 const About = () => {
   return (
@@ -165,24 +166,48 @@ branding — and then extends its impact by educating and uplifting rural youth 
     </div>
   </section>
   {/* Impact Section */}
-  <section className="bg-[#1E1E1E] py-16 px-4" data-aos="fade-up">
-    <div className="max-w-6xl mx-auto text-center">
-      <h2 className="text-3xl font-bold text-[#E0E0E0] mb-8">Our Reach</h2>
-      <div className="grid md:grid-cols-4 gap-6">
-        {[
-          { number: '10+', label: 'Design Projects Completed' },
-          { number: '3+', label: 'Websites Delivered' },
-          { number: '1', label: 'Rural Hubs Launched' },
-          { number: '6+', label: 'Students Trained' },
-        ].map((stat, idx) => (
-          <div key={idx} className="bg-[#121212] rounded-lg p-6 border border-[#444444] hover:shadow-md hover:shadow-[#888] transition-all duration-300">
-            <h3 className="text-3xl font-bold text-[#E0E0E0] mb-2">{stat.number}</h3>
-            <p className="text-[#B0B0B0] text-sm uppercase tracking-wide">{stat.label}</p>
-          </div>
-        ))}
-      </div>
+  <section className="bg-[#1E1E1E] py-20 px-4" data-aos="fade-up">
+  <div className="max-w-6xl mx-auto text-center">
+    {/* Gradient Heading */}
+    <h2 className="text-4xl md:text-5xl font-extrabold mb-10 bg-gradient-to-r from-[#00C8FF] via-[#7C4DFF] to-[#FF4081] bg-clip-text text-transparent">
+      Our Reach
+    </h2>
+
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      {[
+        { number: 10, label: "Design Projects Completed", suffix: "+" },
+        { number: 3, label: "Websites Delivered", suffix: "+" },
+        { number: 1, label: "Rural Hubs Launched", suffix: "" },
+        { number: 6, label: "Students Trained", suffix: "+" },
+      ].map((stat, idx) => (
+        <div
+          key={idx}
+          className="bg-[#121212] border border-[#2A2A2A] rounded-2xl p-8 shadow-md hover:shadow-xl 
+                     hover:shadow-[#00C8FF]/20 transition-all duration-500"
+          data-aos="zoom-in"
+        >
+          {/* Animated Number */}
+          <h3 className="text-4xl md:text-5xl font-extrabold mb-3 bg-gradient-to-r from-[#00C8FF] to-[#7C4DFF] bg-clip-text text-transparent">
+            <CountUp
+              start={0}
+              end={stat.number}
+              duration={2.5}
+              separator=","
+              suffix={stat.suffix}
+              enableScrollSpy
+              scrollSpyOnce
+            />
+          </h3>
+
+          {/* Label */}
+          <p className="text-[#B0B0B0] text-sm uppercase tracking-wide leading-tight">
+            {stat.label}
+          </p>
+        </div>
+      ))}
     </div>
-  </section>
+  </div>
+</section>
   {/* Testimonials Section */}
   <section className="bg-[#121212] py-20 px-4" data-aos="fade-up">
     <div className="max-w-5xl mx-auto text-center">

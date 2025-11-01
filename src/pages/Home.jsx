@@ -1,88 +1,209 @@
-import React from 'react';
-import Services from './Services';
-import Contact from './Contact';
-import Coaching from './Coaching';
-import SkillMarquee from './SkillMarquee';
-import TextTransition, { presets } from 'react-text-transition';
-import 'aos/dist/aos.css';
-import AOS from 'aos';
-import About from './About';
-import Portfolio from './Portfolio';
+// src/pages/Home.jsx
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { NavLink } from "react-router-dom"; 
+import Services from "./Services";
+import About from "./About";
+import Portfolio from "./Portfolio";
+import Coaching from "./Coaching";
+import Contact from "./Contact";
+import SkillMarquee from "./SkillMarquee";
 
-const TEXTS = [
-  'Websites',
-  'Branding',
-  'Mockups',
-  'AI Apps',
-  'Logos',
-
-];
+const TEXTS = ["Websites", "AI Apps", "Logos", "Branding", "Mockups"];
 
 const Home = () => {
-  const [index, setIndex] = React.useState(0);
+  // eslint-disable-next-line no-unused-vars
+  const [index, setIndex] = useState(0);
 
-  React.useEffect(() => {
-    const intervalId = setInterval(() => setIndex((i) => i + 1), 2500);
-    AOS.init({ duration: 1200, once: true });
+  useEffect(() => {
+    const intervalId = setInterval(() => setIndex((i) => i + 1), 2000);
+    AOS.init({ duration: 1000, once: true });
     return () => clearInterval(intervalId);
   }, []);
 
   return (
-    <div className="relative space-y-20 pt-12 bg-[#121212] text-white overflow-hidden">
+    <div
+      className="relative bg-[#0b0b0c] text-white font-['Lato','Roboto','Helvetica',sans-serif] overflow-hidden"
+      style={{ scrollBehavior: "smooth" }}
+    >
+  
+      {/* ===== HERO SECTION ===== */}
+<section className="relative flex flex-col-reverse lg:flex-row items-center justify-between min-h-screen px-6 md:px-16 py-20 gap-10 z-20">
+  {/* LEFT — TEXT */}
+  <div
+    className="text-left space-y-8 max-w-2xl relative z-30"
+    data-aos="fade-right"
+  >
+    <h1 className="text-[2.8rem] sm:text-[4rem] md:text-[5rem] font-extrabold leading-[1.1] text-gray-100">
+      Transforming{" "}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8E2DE2] to-[#00BCD4]">
+        Ideas
+      </span>
+      <br />
+      Into Digital{" "}
+    </h1>
 
+    {/* MOVING MARQUEE WORD — replaces TextTransition */}
+    <div className="relative h-[90px] sm:h-[110px] overflow-hidden w-full rounded-4xl m-3 bg-white">
+      <div className="absolute whitespace-nowrap animate-fast-marquee flex items-center">
+        {["Websites", "AI Apps", "Logos", "Branding", "Mockups"]
+          .map((text, i) => (
+            <span
+              key={i}
+              className="mx-8 text-[2.8rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] font-extrabold 
+              text-transparent bg-clip-text bg-gradient-to-r from-[#00C8FF] via-[#8E2DE2] to-[#4A00E0]
+              drop-shadow-[0_0_25px_rgba(0,200,255,0.8)]"
+            >
+              {text}
+            </span>
+          ))}
+        {/* Duplicate for seamless loop */}
+        {["Websites", "AI Apps", "Logos", "Branding", "Mockups"]
+          .map((text, i) => (
+            <span
+              key={`dup-${i}`}
+              className="mx-8 text-[2.8rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] font-extrabold 
+              text-transparent bg-clip-text bg-gradient-to-r from-[#00C8FF] via-[#8E2DE2] to-[#4A00E0]
+              drop-shadow-[0_0_25px_rgba(0,200,255,0.8)]"
+            >
+              {text}
+            </span>
+          ))}
+      </div>
+    </div>
 
-      {/* Hero Section with Text Transition */}
-      <section className="py-24 px-4 flex items-center justify-center text-center min-h-screen" data-aos="fade-up">
-        <div>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold text-[#E0E0E0] mb-10 leading-tight">
-            We Create Stunning
-          </h1>
-          <div className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold mb-10 leading-tight text-[#00C8FF] drop-shadow-md grid place-items-center ">
-            <TextTransition springConfig={presets.gentle}>
-              {TEXTS[index % TEXTS.length]}
-            </TextTransition>
+    <p className="text-gray-400 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-xl">
+      We craft experiences that connect design, code, and innovation. From
+      AI-powered apps to premium websites and brand identities — we make
+      ideas come alive with technology and creativity.
+    </p>
+   <NavLink
+  to="/portfolio"
+  className="inline-block px-8 py-3 text-lg font-semibold rounded-full 
+  bg-gradient-to-r from-[#8E2DE2] to-[#4A00E0] 
+  hover:scale-105 hover:shadow-[0_0_20px_rgba(142,45,226,0.6)] 
+  transition-all duration-300 shadow-lg"
+>
+  Explore Our Work
+</NavLink>
+
+  </div>
+
+  {/* RIGHT — VIDEO */}
+  <div
+    className="relative w-full lg:w-1/2 flex justify-center z-20"
+    data-aos="fade-left"
+  >
+    <div className="relative">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="rounded-3xl shadow-2xl w-[90%] md:w-[80%] lg:w-[90%] opacity-90 hover:opacity-100 transition-all duration-700 z-10"
+      >
+        <source
+          src="/image/website-intro.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      {/* Glow overlay */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#8E2DE2]/25 to-[#00BCD4]/25 blur-2xl rounded-3xl -z-10"></div>
+    </div>
+  </div>
+
+  {/* Animation CSS */}
+  <style>{`
+    @keyframes fastMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-fast-marquee {
+      display: inline-flex;
+      animation: fastMarquee 10s linear infinite;
+    }
+  `}</style>
+</section>
+
+      {/* ===== SCROLLING SERVICES ===== */}
+      <section
+        className="relative py-24 bg-[#121212] overflow-hidden"
+        data-aos="fade-up"
+      >
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[#8E2DE2] to-[#00C8FF]">
+          Our Core Services
+        </h2>
+
+        <div className="relative max-w-6xl mx-auto overflow-hidden px-6">
+          <div className="flex whitespace-nowrap animate-marquee">
+            {[
+              "Static Websites",
+              "Dynamic Websites",
+              "Full Stack Web Apps",
+              "AI Integrations",
+              "E-Commerce",
+              "Mobile App UI/UX",
+              "Brand Design",
+              "Motion Graphics",
+              "Poster & Logo Design",
+            ]
+              .concat([
+                "Static Websites",
+                "Dynamic Websites",
+                "Full Stack Web Apps",
+                "AI Integrations",
+                "E-Commerce",
+                "Mobile App UI/UX",
+                "Brand Design",
+                "Motion Graphics",
+                "Poster & Logo Design",
+              ])
+              .map((service, i) => (
+                <div
+                  key={i}
+                  className="mx-6 px-8 py-5 rounded-2xl bg-gradient-to-r from-[#4A00E0] to-[#8E2DE2] text-white text-lg sm:text-xl md:text-2xl font-semibold shadow-lg border border-[#6a0dad]/30 min-w-[240px] text-center hover:scale-105 transition-transform duration-300"
+                >
+                  {service}
+                </div>
+              ))}
           </div>
-          <p className="text-[#B0B0B0] mt-6 max-w-4xl mx-auto text-base sm:text-lg md:text-xl lg:text-2xl">
-            Specializing in websites, logos, mockups, AI-powered apps, and complete brand identity to elevate your digital presence. We also provide coaching in design and tech to empower rural talent.
-          </p>
+
+          <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-[#121212] to-transparent pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-[#121212] to-transparent pointer-events-none"></div>
         </div>
+
+        <style>{`
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            display: inline-flex;
+            width: max-content;
+            animation: marquee 25s linear infinite;
+          }
+        `}</style>
       </section>
 
-      {/* about section */} 
+      {/* ABOUT */}
+      <section className="relative py-24 px-6 md:px-12" data-aos="fade-up">
+        <About />
+      </section>
 
-        <About/>
-      
+      {/* PORTFOLIO */}
+      <section className="relative py-24 px-6 md:px-12" data-aos="fade-up">
+        <Portfolio />
+      </section>
+       <section className="relative py-24 px-6 md:px-12" data-aos="fade-up">
+        <Services/>
+      </section>
 
-
-         {/* Services Section with Animated Background */}
-        <div className="relative z-0">
-          <div className="absolute inset-0 -z-10 pointer-events-none">
-            <div className="w-80 h-80 bg-[#FFC107] opacity-10 rounded-full absolute top-1/3 left-1/4 blur-3xl 
-        animate-pulse" data-aos="fade-right"></div>
-            <div className="w-96 h-96 bg-[#7C4DFF] opacity-10 rounded-full absolute top-2/3 right-1/3 blur-3xl 
-        animate-pulse delay-500" data-aos="fade-left"></div>
-            <div className="w-72 h-72 bg-[#18FFFF] opacity-10 rounded-full absolute bottom-10 left-1/2 
-        transform -translate-x-1/2 blur-3xl animate-pulse delay-1000" data-aos="zoom-in"></div>
-          </div>
-          <Services/>
-          </div>
-          <SkillMarquee/>
-           
-          {/* Services Section with Animated Background */}
-        <div className="relative z-0">
-          <div className="absolute inset-0 -z-10 pointer-events-none">
-            <div className="w-80 h-80 bg-[#FFC107] opacity-10 rounded-full absolute top-1/3 left-1/4 blur-3xl animate-pulse" data-aos="fade-right"></div>
-            <div className="w-96 h-96 bg-[#7C4DFF] opacity-10 rounded-full absolute top-2/3 right-1/3 blur-3xl  animate-pulse delay-500" data-aos="fade-left"></div>
-            <div className="w-72 h-72 bg-[#18FFFF] opacity-10 rounded-full absolute bottom-10 left-1/2 
-        transform -translate-x-1/2 blur-3xl animate-pulse delay-1000" data-aos="zoom-in"></div>
-          </div>
-          <Coaching />
-          </div>
-          <Portfolio/>
-          <Contact />
-         
-
-      
+      {/* CONTACT */}
+      <section className="relative py-24 px-6 md:px-12" data-aos="fade-up">
+        <Contact />
+      </section>
     </div>
   );
 };
