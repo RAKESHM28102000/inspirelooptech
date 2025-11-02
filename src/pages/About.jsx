@@ -101,7 +101,7 @@ const About = () => {
             </p>
           </div>
           <div className="order-1 md:order-2">
-            <img src="./image/img/ai-2.jpg" alt="Why Choose Us" className="rounded-xl shadow-md w-full object-cover h-auto" />
+            <img src="./image/img/face-1.jpg" alt="Why Choose Us" className="rounded-xl shadow-md w-full object-cover h-auto" />
           </div>
         </div>
       </section>
