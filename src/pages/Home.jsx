@@ -103,7 +103,7 @@ const Home = () => {
         className="rounded-3xl shadow-2xl w-full opacity-90 hover:opacity-100 transition-all duration-700 z-10"
       >
         <source
-          src="src/assets/inspireloop Technology.mp4"
+          src="/inspireloop Technology.mp4"
           type="video/mp4"
         />
       </video>
