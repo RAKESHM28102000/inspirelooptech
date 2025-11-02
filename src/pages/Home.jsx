@@ -6,10 +6,8 @@ import { NavLink } from "react-router-dom";
 import Services from "./Services";
 import About from "./About";
 import Portfolio from "./Portfolio";
-import Coaching from "./Coaching";
 import Contact from "./Contact";
-import SkillMarquee from "./SkillMarquee";
-
+import heroVideo from "../assets/inspireloopTechnology.mp4";
 const TEXTS = ["Websites", "AI Apps", "Logos", "Branding", "Mockups"];
 
 const Home = () => {
@@ -100,12 +98,10 @@ const Home = () => {
         loop
         muted
         playsInline
+        preload="auto"
         className="rounded-3xl shadow-2xl w-full opacity-90 hover:opacity-100 transition-all duration-700 z-10"
-      >
-        <source
-          src="/inspireloop Technology.mp4"
-          type="video/mp4"
-        />
+      > 
+      <source src={heroVideo} type="video/mp4" />
       </video>
 
       {/* Glow overlay */}
