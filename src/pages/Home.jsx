@@ -29,7 +29,7 @@ const Home = () => {
     >
   
       {/* ===== HERO SECTION ===== */}
-<section className="relative flex flex-col-reverse lg:flex-row items-center justify-between min-h-screen px-6 md:px-16 py-20 gap-10 z-20">
+<section className="relative flex flex-col lg:flex-row items-center justify-center min-h-screen px-6 md:px-16 py-20 gap-10 z-20">
   {/* LEFT — TEXT */}
   <div
     className="text-left space-y-8 max-w-2xl relative z-30"
@@ -45,7 +45,7 @@ const Home = () => {
     </h1>
 
     {/* MOVING MARQUEE WORD — replaces TextTransition */}
-    <div className="relative h-[90px] sm:h-[110px] overflow-hidden w-full rounded-4xl m-3 bg-white">
+    <div className="relative h-[90px] sm:h-[110px] overflow-hidden w-full rounded-4xl my-3 bg-white md:py-0 py-2">
       <div className="absolute whitespace-nowrap animate-fast-marquee flex items-center">
         {["Websites", "AI Apps", "Logos", "Branding", "Mockups"]
           .map((text, i) => (
@@ -92,7 +92,7 @@ const Home = () => {
 
   {/* RIGHT — VIDEO */}
   <div
-    className="relative w-full lg:w-1/2 flex justify-center z-20"
+    className="relative w-full lg:w-1/2 flex justify-center items-center z-20"
     data-aos="fade-left"
   >
     <div className="relative">
@@ -101,16 +101,16 @@ const Home = () => {
         loop
         muted
         playsInline
-        className="rounded-3xl shadow-2xl w-[90%] md:w-[80%] lg:w-[90%] opacity-90 hover:opacity-100 transition-all duration-700 z-10"
+        className="rounded-3xl shadow-2xl w-full opacity-90 hover:opacity-100 transition-all duration-700 z-10"
       >
         <source
-          src="/image/website-intro.mp4"
+          src="/image/inspireloop Technology.mp4"
           type="video/mp4"
         />
       </video>
 
       {/* Glow overlay */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-[#8E2DE2]/25 to-[#00BCD4]/25 blur-2xl rounded-3xl -z-10"></div>
+      <div className="absolute  inset-0 bg-gradient-to-tr from-[#8E2DE2]/25 to-[#00BCD4]/25 blur-2xl rounded-3xl -z-10"></div>
     </div>
   </div>
 

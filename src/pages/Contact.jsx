@@ -36,7 +36,12 @@ const Contact = () => {
           onSubmit={sendEmail}
           className="space-y-5 bg-[#121212] p-8 rounded-2xl shadow-lg w-full"
         >
-          <h2 className="text-3xl font-bold text-[#E0E0E0] mb-4">{status}</h2>
+          {/* Gradient Heading */}
+          <h2
+            className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#8E2DE2] to-[#4A00E0] text-transparent bg-clip-text"
+          >
+            {status}
+          </h2>
 
           <input
             type="text"

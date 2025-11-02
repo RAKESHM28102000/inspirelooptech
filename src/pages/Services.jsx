@@ -1,23 +1,19 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Typewriter from "typewriter-effect";
+import SkillMarquee from "./SkillMarquee";
 
 const Services = () => {
   const [firstVisit, setFirstVisit] = useState(false);
   const [showHeroAnimation, setShowHeroAnimation] = useState(false);
 
   useEffect(() => {
-    // Check if this is the user's first visit
     const hasVisited = localStorage.getItem("servicesPageVisited");
-
     if (!hasVisited) {
       setFirstVisit(true);
       setShowHeroAnimation(true);
       AOS.init({ duration: 1000, once: true });
       localStorage.setItem("servicesPageVisited", "true");
-
-      // Stop the hero animation after a few seconds
       setTimeout(() => setShowHeroAnimation(false), 4000);
     }
   }, []);
@@ -47,7 +43,7 @@ const Services = () => {
     { title: "AI Mobile App", desc: "Mobile apps with AI chatbots and analytics.", price: "₹50,000 - ₹80,000", img: "https://cdn-icons-png.flaticon.com/512/4712/4712069.png" },
   ];
 
-  // ===== Reusable Grid Component =====
+  // ===== Reusable Service Grid =====
   const renderServiceGrid = (services, gradientClass, shadowColor) => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
       {services.map((service, i) => (
@@ -124,19 +120,7 @@ const Services = () => {
       >
         <h1 className="text-5xl md:text-9xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-[#00FFC3] via-[#5F0FFF] to-[#00FFC3] bg-clip-text text-transparent transition-transform duration-1000 animate-zoom-in">
           We Create&nbsp;
-          <span className="text-[#00FFC3]">
-            {firstVisit ? (
-              <Typewriter
-                options={{
-                  strings: ["Websites", "AI Apps", "Graphics", "Videos", "E-Commerce"],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
-            ) : (
-              "Digital Experiences"
-            )}
-          </span>
+          <span className="text-[#00FFC3]">Digital Experiences</span>
         </h1>
         <p className="text-[#CCCCCC] max-w-2xl mb-8 text-lg md:text-xl animate-fade-in">
           Transforming your ideas into intelligent, scalable, and stunning digital experiences.
@@ -176,6 +160,7 @@ const Services = () => {
         shadow="#448AFF"
         reverse={true}
       />
+      <SkillMarquee />
     </div>
   );
 };

@@ -3,9 +3,12 @@ import React from "react";
 import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 
 const FloatingButtons = () => {
+  const phoneNumber = "916383627745";
+  const whatsappMessage = encodeURIComponent("Hello Rakesh! I’m interested in your web development services.");
+
   return (
     <>
-      {/* Custom animation styles directly in same page */}
+      {/* ✅ Custom animation styles directly in same page */}
       <style>{`
         @keyframes bounceSlow {
           0%, 100% { transform: translateY(0); }
@@ -15,12 +18,20 @@ const FloatingButtons = () => {
           0%, 100% { opacity: 0.3; transform: scale(1); }
           50% { opacity: 0.6; transform: scale(1.1); }
         }
+
+        @media (max-width: 640px) {
+          .floating-buttons {
+            bottom: 4%;
+            left: 4%;
+            gap: 0.75rem;
+          }
+        }
       `}</style>
 
-      <div className="fixed bottom-5 left-5 flex flex-col gap-4 z-50">
-        {/* WhatsApp Group Button */}
+      <div className="fixed bottom-5 left-5 flex flex-col gap-4 z-50 floating-buttons">
+        {/* ✅ WhatsApp Direct Chat Button */}
         <a
-          href="https://chat.whatsapp.com/your-group-invite-link" // 🔹 Replace with your actual WhatsApp group link
+          href={`https://wa.me/${phoneNumber}?text=${whatsappMessage}`}
           target="_blank"
           rel="noopener noreferrer"
           className="relative w-14 h-14 flex items-center justify-center bg-green-500 text-white rounded-full 
@@ -28,7 +39,7 @@ const FloatingButtons = () => {
           style={{
             animation: "bounceSlow 2.5s infinite ease-in-out",
           }}
-          title="Join our Web Development Group"
+          title="Chat with Rakesh on WhatsApp"
         >
           <span
             className="absolute inset-0 rounded-full bg-green-400 blur-md"
@@ -40,7 +51,7 @@ const FloatingButtons = () => {
           <FaWhatsapp className="text-3xl relative z-10" />
         </a>
 
-        {/* Call Me Button */}
+        {/* ✅ Call Me Button */}
         <a
           href="tel:+916383627745"
           className="relative w-14 h-14 flex items-center justify-center bg-sky-500 text-white rounded-full 
@@ -48,7 +59,7 @@ const FloatingButtons = () => {
           style={{
             animation: "bounceSlow 2.5s infinite ease-in-out 0.6s",
           }}
-          title="Call Me"
+          title="Call Rakesh"
         >
           <span
             className="absolute inset-0 rounded-full bg-sky-400 blur-md"
