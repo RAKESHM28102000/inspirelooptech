@@ -52,8 +52,7 @@ const Home = () => {
             <span
               key={i}
               className="mx-8 text-[2.8rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] font-extrabold 
-              text-transparent bg-clip-text bg-gradient-to-r from-[#00C8FF] via-[#8E2DE2] to-[#4A00E0]
-              drop-shadow-[0_0_25px_rgba(0,200,255,0.8)]"
+              text-transparent bg-clip-text bg-gradient-to-r from-[#00C8FF] via-[#8E2DE2] to-[#4A00E0]"
             >
               {text}
             </span>
