@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // src/pages/Home.jsx
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
@@ -7,11 +8,9 @@ import Services from "./Services";
 import About from "./About";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
-import heroVideo from "../assets/inspireloopTechnology.mp4";
 const TEXTS = ["Websites", "AI Apps", "Logos", "Branding", "Mockups"];
 
 const Home = () => {
-  // eslint-disable-next-line no-unused-vars
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -25,102 +24,93 @@ const Home = () => {
       className="relative bg-[#0b0b0c] text-white font-['Lato','Roboto','Helvetica',sans-serif] overflow-hidden"
       style={{ scrollBehavior: "smooth" }}
     >
-  
       {/* ===== HERO SECTION ===== */}
-<section className="relative flex flex-col lg:flex-row items-center justify-center min-h-screen px-6 md:px-16 py-20 gap-10 z-20">
-  {/* LEFT — TEXT */}
-  <div
-    className="text-left space-y-8 max-w-2xl relative z-30"
-    data-aos="fade-right"
-  >
-    <h1 className="text-[2.8rem] sm:text-[4rem] md:text-[5rem] font-extrabold leading-[1.1] text-gray-100">
-      Transforming{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8E2DE2] to-[#00BCD4]">
-        Ideas
-      </span>
-      <br />
-      Into Digital{" "}
-    </h1>
-
-    {/* MOVING MARQUEE WORD — replaces TextTransition */}
-    <div className="relative h-[90px] sm:h-[110px] overflow-hidden w-full rounded-4xl my-3 bg-white md:py-0 py-2">
-      <div className="absolute whitespace-nowrap animate-fast-marquee flex items-center">
-        {["Websites", "AI Apps", "Logos", "Branding", "Mockups"]
-          .map((text, i) => (
-            <span
-              key={i}
-              className="mx-8 text-[2.8rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] font-extrabold 
-              text-transparent bg-clip-text bg-gradient-to-r from-[#00C8FF] via-[#8E2DE2] to-[#4A00E0]"
-            >
-              {text}
+      <section className="relative flex flex-col lg:flex-row items-center justify-center min-h-screen px-6 md:px-16 py-20 gap-10 z-20">
+        {/* LEFT — TEXT */}
+        <div
+          className="text-left space-y-8 max-w-2xl relative z-30"
+          data-aos="fade-right"
+        >
+          <h1 className="text-[2.8rem] sm:text-[4rem] md:text-[5rem] font-extrabold leading-[1.1] text-gray-100">
+            Transforming{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8E2DE2] to-[#00BCD4]">
+              Ideas
             </span>
-          ))}
-        {/* Duplicate for seamless loop */}
-        {["Websites", "AI Apps", "Logos", "Branding", "Mockups"]
-          .map((text, i) => (
-            <span
-              key={`dup-${i}`}
-              className="mx-8 text-[2.8rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] font-extrabold 
-              text-transparent bg-clip-text bg-gradient-to-r from-[#00C8FF] via-[#8E2DE2] to-[#4A00E0]
-              drop-shadow-[0_0_25px_rgba(0,200,255,0.8)]"
-            >
-              {text}
-            </span>
-          ))}
-      </div>
-    </div>
+            <br />
+            Into Digital{" "}
+          </h1>
 
-    <p className="text-gray-400 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-xl">
-      We craft experiences that connect design, code, and innovation. From
-      AI-powered apps to premium websites and brand identities — we make
-      ideas come alive with technology and creativity.
-    </p>
-   <NavLink
-  to="/portfolio"
-  className="inline-block px-8 py-3 text-lg font-semibold rounded-full 
-  bg-gradient-to-r from-[#8E2DE2] to-[#4A00E0] 
-  hover:scale-105 hover:shadow-[0_0_20px_rgba(142,45,226,0.6)] 
-  transition-all duration-300 shadow-lg"
->
-  Explore Our Work
-</NavLink>
+          {/* MOVING MARQUEE WORD */}
+          <div className="relative h-[90px] sm:h-[110px] overflow-hidden w-full rounded-4xl my-3 bg-white md:py-0 py-2">
+            <div className="absolute whitespace-nowrap animate-fast-marquee flex items-center">
+              {TEXTS.map((text, i) => (
+                <span
+                  key={i}
+                  className="mx-8 text-[2.8rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] font-extrabold 
+                  text-transparent bg-clip-text bg-gradient-to-r from-[#00C8FF] via-[#8E2DE2] to-[#4A00E0]"
+                >
+                  {text}
+                </span>
+              ))}
+              {TEXTS.map((text, i) => (
+                <span
+                  key={`dup-${i}`}
+                  className="mx-8 text-[2.8rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] font-extrabold 
+                  text-transparent bg-clip-text bg-gradient-to-r from-[#00C8FF] via-[#8E2DE2] to-[#4A00E0]
+                  "
+                >
+                  {text}
+                </span>
+              ))}
+            </div>
+          </div>
 
-  </div>
+          <p className="text-gray-400 text-lg sm:text-xl md:text-2xl leading-relaxed max-w-xl">
+            We craft experiences that connect design, code, and innovation. From
+            AI-powered apps to premium websites and brand identities — we make
+            ideas come alive with technology and creativity.
+          </p>
 
-  {/* RIGHT — VIDEO */}
-  <div
-    className="relative w-full lg:w-1/2 flex justify-center items-center z-20"
-    data-aos="fade-left"
-  >
-    <div className="relative">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        className="rounded-3xl shadow-2xl w-full opacity-90 hover:opacity-100 transition-all duration-700 z-10"
-      > 
-      <source src={heroVideo} type="video/mp4" />
-      </video>
+          <NavLink
+            to="/portfolio"
+            className="inline-block px-8 py-3 text-lg font-semibold rounded-full 
+            bg-gradient-to-r from-[#8E2DE2] to-[#4A00E0] 
+            hover:scale-105 hover:shadow-[0_0_20px_rgba(142,45,226,0.6)] 
+            transition-all duration-300 shadow-lg"
+          >
+            Explore Our Work
+          </NavLink>
+        </div>
 
-      {/* Glow overlay */}
-      <div className="absolute  inset-0 bg-gradient-to-tr from-[#8E2DE2]/25 to-[#00BCD4]/25 blur-2xl rounded-3xl -z-10"></div>
-    </div>
-  </div>
+        {/* RIGHT — IMAGE (Replaces Video) */}
+        <div
+          className="relative w-full lg:w-1/2 flex justify-center items-center z-20"
+          data-aos="fade-left"
+        >
+          <div className="relative">
+            <img
+              src="/image/homepageimg/home-page-1.jpg"
+              alt="Creative design illustration"
+              className="rounded-3xl shadow-lg w-full opacity-90 hover:opacity-100 ring-2 ring-gray-600 transition-all duration-700 z-10 shadow-violet-500"
+            />
 
-  {/* Animation CSS */}
-  <style>{`
-    @keyframes fastMarquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .animate-fast-marquee {
-      display: inline-flex;
-      animation: fastMarquee 10s linear infinite;
-    }
-  `}</style>
-</section>
+            {/* Glow overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-violet-600/25 to-red-500/25 blur-2xl rounded-3xl -z-10"></div>
+          </div>
+        </div>
+
+        {/* Animation CSS */}
+        <style>{`
+          @keyframes fastMarquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-fast-marquee {
+            display: inline-flex;
+            animation: fastMarquee 10s linear infinite;
+          }
+        `}</style>
+      </section>
 
       {/* ===== SCROLLING SERVICES ===== */}
       <section
@@ -191,8 +181,10 @@ const Home = () => {
       <section className="relative py-24 px-6 md:px-12" data-aos="fade-up">
         <Portfolio />
       </section>
-       <section className="relative py-24 px-6 md:px-12" data-aos="fade-up">
-        <Services/>
+
+      {/* SERVICES */}
+      <section className="relative py-24 px-6 md:px-12" data-aos="fade-up">
+        <Services />
       </section>
 
       {/* CONTACT */}
