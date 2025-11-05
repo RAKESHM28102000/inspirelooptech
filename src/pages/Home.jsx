@@ -7,7 +7,7 @@ import Services from "./Services";
 import About from "./About";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
-import heroVideo from "../assets/inspireloopTechnology.mp4";
+import heroVideo from "../assets/website_video.mp4";
 const TEXTS = ["Websites", "AI Apps", "Logos", "Branding", "Mockups"];
 
 const Home = () => {
