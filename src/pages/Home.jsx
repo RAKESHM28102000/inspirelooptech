@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // src/pages/Home.jsx
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
@@ -34,7 +35,7 @@ const Home = () => {
           className="space-y-8 max-w-2xl relative z-30 flex flex-col items-center lg:items-start"
           data-aos="fade-right"
         >
-          <h1 className="text-[2.8rem] sm:text-[4rem] md:text-[5rem] font-extrabold leading-[1.1] text-gray-100">
+          <h1 className="text-[2.8rem] sm:text-[3.5rem] md:text-[rem] lg:text-[4.5rem] xl:text-[5rem] font-extrabold leading-[1.1] text-gray-100">
             Transforming{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8E2DE2] to-[#00BCD4]">
               Ideas
@@ -44,7 +45,7 @@ const Home = () => {
           </h1>
 
           {/* MOVING MARQUEE WORD */}
-          <div className="relative h-[90px] sm:h-[110px] overflow-hidden w-full rounded-4xl my-3 bg-white md:py-0 py-2">
+          <div className="relative h-[90px] sm:h-[110px] overflow-hidden w-full">
             <div className="absolute whitespace-nowrap animate-fast-marquee flex items-center">
               {TEXTS.map((text, i) => (
                 <span
@@ -122,7 +123,7 @@ const Home = () => {
 
       {/* ===== SCROLLING SERVICES ===== */}
       <section
-        className="relative py-24 bg-[#121212] overflow-hidden"
+        className="relative py-24 overflow-hidden"
         data-aos="fade-up"
       >
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[#8E2DE2] to-[#00C8FF]">

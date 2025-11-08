@@ -47,8 +47,8 @@ const Portfolio = () => {
   return (
     <div className="pt-16 space-y-12">
       {/* Header Section */}
-      <section className="text-center bg-[#1E1E1E] py-12 px-4" data-aos="fade-up">
-        <h2 className="text-4xl font-bold mb-6 text-[#E0E0E0]">Portfolio</h2>
+      <section className="text-center py-12 px-4" data-aos="fade-up">
+        <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 text-[#E0E0E0]">Portfolio</h2>
         <div className="flex justify-center gap-6">
           <button
             className={`px-6 py-2 rounded bg-[#121212] border border-[#444444] hover:bg-[#888888] hover:text-black transition-all ${
@@ -70,7 +70,7 @@ const Portfolio = () => {
       </section>
 
       {/* Project Cards Section */}
-      <section className="bg-[#121212] py-12 px-4" data-aos="fade-up">
+      <section className=" py-12 px-4" data-aos="fade-up">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div
@@ -84,7 +84,7 @@ const Portfolio = () => {
               />
 
               {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00C8FF] via-[#7C4DFF] to-[#FF4081]  bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <a
                   href={project.link}
                   target="_blank"

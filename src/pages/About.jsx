@@ -6,7 +6,7 @@ const About = () => {
     <div className="space-y-20 pt-12">
 
       {/* Company Overview */}
-      <section className="bg-[#1E1E1E] py-16 text-center px-4" data-aos="fade-up">
+      <section className="py-16 text-center px-4" data-aos="fade-up">
         <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#00C8FF] via-[#7C4DFF] to-[#FF4081] bg-clip-text text-transparent">
           Who We Are
         </h2>
@@ -73,7 +73,7 @@ const About = () => {
       
 
       {/* Our Story */}
-      <section className="bg-[#1E1E1E] py-16 px-4" data-aos="fade-up">
+      <section className=" py-16 px-4" data-aos="fade-up">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <div className="w-full">
             <img src="./image/img/ai-1.jpg" alt="Our Story" className="rounded-xl shadow-md w-full object-cover h-auto" />
@@ -90,7 +90,7 @@ const About = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="bg-[#121212] py-16 px-4" data-aos="fade-up">
+      <section className=" py-16 px-4" data-aos="fade-up">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <div className="order-2 md:order-1">
             <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#FF4081] via-[#7C4DFF] to-[#00C8FF] bg-clip-text text-transparent">
@@ -107,7 +107,7 @@ const About = () => {
       </section>
 
       {/* Features Section */}
-      <section className="bg-[#1E1E1E] py-16" data-aos="fade-right">
+      <section className="py-16" data-aos="fade-right">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8 text-center">
           {[
             { title: 'Website & App Creation', desc: 'Responsive, scalable websites and apps tailored to your business goals.' },
@@ -123,7 +123,7 @@ const About = () => {
       </section>
 
       {/* About Our Mission */}
-      <section className="bg-[#121212] py-20 px-4 text-center" data-aos="fade-up">
+      <section className=" py-20 px-4 text-center" data-aos="fade-up">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-[#00C8FF] via-[#7C4DFF] to-[#FF4081] bg-clip-text text-transparent">
             About Our Mission
@@ -135,7 +135,7 @@ const About = () => {
       </section>
 
       {/* Impact Section */}
-      <section className="bg-[#1E1E1E] py-20 px-4" data-aos="fade-up">
+      <section className=" py-20 px-4" data-aos="fade-up">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-10 bg-gradient-to-r from-[#00C8FF] via-[#7C4DFF] to-[#FF4081] bg-clip-text text-transparent">
             Our Reach
@@ -161,7 +161,7 @@ const About = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-[#121212] py-20 px-4" data-aos="fade-up">
+      <section className=" py-20 px-4" data-aos="fade-up">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-12 bg-gradient-to-r from-[#00C8FF] via-[#7C4DFF] to-[#FF4081] bg-clip-text text-transparent">
             Client & Learner Feedback
@@ -181,7 +181,7 @@ const About = () => {
       </section>
 
       {/* About Me */}
-      <section className="bg-[#1E1E1E] py-20 px-4" data-aos="fade-up">
+      <section className=" py-20 px-4" data-aos="fade-up">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <div className="w-full">
             <img src="./image/rakesh.jpg" alt="Rakesh M" className="rounded-xl shadow-md w-full object-cover h-auto" />
