@@ -142,10 +142,10 @@ const About = () => {
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { number: 10, label: "Design Projects Completed", suffix: "+" },
-              { number: 3, label: "Websites Delivered", suffix: "+" },
+              { number: 40, label: "Website Design Completed", suffix: "+" },
+              { number:30, label: "Websites Delivered", suffix: "+" },
               { number: 1, label: "Rural Hubs Launched", suffix: "" },
-              { number: 6, label: "Students Trained", suffix: "+" },
+              { number: 14, label: "Students Trained", suffix: "" },
             ].map((stat, idx) => (
               <div key={idx} className="bg-[#121212] border border-[#2A2A2A] rounded-2xl p-8 shadow-md hover:shadow-xl hover:shadow-[#00C8FF]/20 transition-all duration-500" data-aos="zoom-in">
                 <h3 className="text-4xl md:text-5xl font-extrabold mb-3 bg-gradient-to-r from-[#00C8FF] to-[#7C4DFF] bg-clip-text text-transparent">
@@ -168,8 +168,8 @@ const About = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {[
-              { name: 'Peter P.', message: 'Amazing branding work! My startup now looks premium and professional.' },
-              { name: 'Prem kumar M.', message: 'I learned web design from their coaching program and now freelance full-time.' },
+              { name: 'MPR POWER TECH', message: 'Amazing branding work! My startup now looks premium and professional.' },
+              { name: 'Prem kumar M', message: 'I learned web design from their coaching program and now freelance full-time.' },
             ].map((testimonial, idx) => (
               <div key={idx} className="bg-[#1E1E1E] border border-[#444444] rounded p-6 shadow-md hover:shadow-[#aaa] transition duration-300">
                 <p className="text-[#B0B0B0] mb-4 italic">"{testimonial.message}"</p>
