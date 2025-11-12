@@ -48,11 +48,11 @@ const Footer = () => {
         <div>
           <h4 className="text-[#E0E0E0] font-semibold mb-3">Services & Courses</h4>
           <ul className="space-y-2">
-            <li><Link to="/services/web" className="hover:text-[#888888]">Web & App Development</Link></li>
-            <li><Link to="/services/design" className="hover:text-[#888888]">Graphic Design</Link></li>
-            <li><Link to="/services/ai" className="hover:text-[#888888]">AI Integration</Link></li>
-            <li><Link to="/courses/powerbi" className="hover:text-[#888888]">Power BI & Excel</Link></li>
-            <li><Link to="/courses/aptitude" className="hover:text-[#888888]">Aptitude & Job Training</Link></li>
+            <li><Link to="/coaching" className="hover:text-[#888888]">Web & App Development</Link></li>
+            <li><Link to="/coaching" className="hover:text-[#888888]">Graphic Design</Link></li>
+            <li><Link to="/coaching" className="hover:text-[#888888]">AI Integration</Link></li>
+            <li><Link to="/coaching" className="hover:text-[#888888]">Power BI & Excel</Link></li>
+            <li><Link to="/coaching" className="hover:text-[#888888]">Aptitude & Job Training</Link></li>
           </ul>
         </div>
 

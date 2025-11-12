@@ -77,7 +77,7 @@ const Contact = () => {
         <div className="w-full h-80 md:h-full">
           <iframe
             title="Location"
-            className="w-full h-full rounded-2xl border border-[#444444]"
+            className="w-full h-full rounded-2xl border border-[#ffffff] shadow-[#8E2DE2] shadow-lg "
             src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d500.85849864615454!2d79.94218286214058!3d12.6610973732057!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1752931988924!5m2!1sen!2sin"
             allowFullScreen=""
             loading="lazy"
