@@ -169,7 +169,7 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               { name: 'MPR POWER TECH', message: 'Amazing branding work! My startup now looks premium and professional.' },
-              { name: 'Prem kumar M', message: 'I learned web design from their coaching program and now freelance full-time.' },
+              { name: 'Lunico Kitchen', message: 'The website is clean, professional design that effectively showcases our specialty in corporate catering services. Navigation is clear and content is well-organized, making it easy to find menus and contact details. The site clearly communicates our brand mission and focuses strongly on trust and reliability with our prominent client testimonials.' },
             ].map((testimonial, idx) => (
               <div key={idx} className="bg-[#1E1E1E] border border-[#444444] rounded p-6 shadow-md hover:shadow-[#aaa] transition duration-300">
                 <p className="text-[#B0B0B0] mb-4 italic">"{testimonial.message}"</p>
