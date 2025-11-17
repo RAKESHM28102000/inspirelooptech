@@ -9,6 +9,7 @@ import About from "./About";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
 import heroVideo from "../assets/website_video.mp4";
+import GridScan from "../components/GridScan";
 
 const TEXTS = ["Websites", "AI Apps", "Logos", "Branding", "Mockups"];
 
@@ -29,7 +30,20 @@ const Home = () => {
   
       {/* ===== HERO SECTION ===== */}
       <section className="relative flex flex-col lg:flex-row items-center justify-center text-center lg:text-left min-h-screen px-6 md:px-16 py-20 gap-10 z-20">
-        
+         <div className="absolute inset-0 w-full h-full">
+    <GridScan
+      sensitivity={0.55}
+      lineThickness={1}
+      linesColor="#392e4e"
+      gridScale={0.1}
+      scanColor="#FF9FFC"
+      scanOpacity={0.4}
+      enablePost
+      bloomIntensity={0.6}
+      chromaticAberration={0.002}
+      noiseIntensity={0.01}
+    />
+  </div>
         {/* LEFT — TEXT */}
         <div
           className="space-y-8 max-w-2xl relative z-30 flex flex-col items-center lg:items-start"
@@ -104,7 +118,7 @@ const Home = () => {
             </video>
 
             {/* Glow overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#8E2DE2]/25 to-[#00BCD4]/25 blur-2xl rounded-3xl -z-10"></div>
+            {/* <div className="absolute inset-0 bg-gradient-to-tr from-[#8E2DE2]/25 to-[#00BCD4]/25 blur-2xl rounded-3xl -z-10"></div> */}
           </div>
         </div>
 
