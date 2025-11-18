@@ -30,7 +30,7 @@ const Home = () => {
   
       {/* ===== HERO SECTION ===== */}
       <section className="relative flex flex-col lg:flex-row items-center justify-center text-center lg:text-left min-h-screen px-6 md:px-16 py-20 gap-10 z-20">
-         <div className="absolute inset-0 w-full h-full">
+         <div className="absolute inset-0 w-full h-full min-h-[600px] md:min-h-[700px] lg:min-h-[800px] overflow-hidden">
     <GridScan
       sensitivity={0.55}
       lineThickness={1}
@@ -206,9 +206,9 @@ const Home = () => {
       </section>
 
       {/* SERVICES */}
-      <section className="relative py-24 px-6 md:px-12" data-aos="fade-up">
-        <Services />
-      </section>
+      {/* <section className="relative py-24 px-6 md:px-12" data-aos="fade-up"> */}
+        {/* <Services /> */}
+      {/* </section> */}
 
       {/* CONTACT */}
       <section className="relative py-24 px-6 md:px-12" data-aos="fade-up">
