@@ -187,19 +187,29 @@ const About = () => {
             <img src="./image/rakesh.jpg" alt="Rakesh M" className="rounded-xl shadow-md w-full object-cover h-auto" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#00C8FF] via-[#7C4DFF] to-[#FF4081] bg-clip-text text-transparent">
-              About Me
-            </h2>
-            <p className="text-[#B0B0B0] text-lg leading-relaxed mb-4">
-              I'm <strong>Rakesh M</strong> – Founder of Rakesh Inspireloop Tech. I’m an MBA student specializing in Human Resource Management and Marketing at the University of Madras, with a deep passion for combining design, technology, and human insight to create meaningful digital experiences.
-            </p>
-            <p className="text-[#B0B0B0] text-lg leading-relaxed mb-4">
-              I’ve completed internships in HR, gained certifications in Graphic Design, Web Development, and launched <strong>Rakesh InspireLoop Tech</strong> — a startup focused on digital branding and design.
-            </p>
-            <p className="text-[#B0B0B0] text-lg leading-relaxed">
-              My mission is to empower individuals, startups, and organizations with digital tools that are not only visually stunning but also smart, scalable, and results-driven.
-            </p>
-          </div>
+  <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#00C8FF] via-[#7C4DFF] to-[#FF4081] bg-clip-text text-transparent">
+    About Me
+  </h2>
+
+  <p className="text-[#B0B0B0] text-lg leading-relaxed mb-4">
+    I'm <strong>Rakesh M</strong> — Founder of <strong>InspireLoop Tech</strong>, a creative digital startup focused on 
+    modern websites, branding, UI/UX design, and innovative digital experiences. I love transforming ideas into 
+    visually powerful and meaningful solutions that help businesses grow in the digital world.
+  </p>
+
+  <p className="text-[#B0B0B0] text-lg leading-relaxed mb-4">
+    I completed my <strong>B.E.</strong> and I am currently pursuing an <strong>MBA</strong> at the University of Madras, 
+    specializing in <strong>Human Resource Management and Marketing</strong>. This combination of technology, business, 
+    and creativity helps me design solutions that are both beautiful and strategically effective.
+  </p>
+
+  <p className="text-[#B0B0B0] text-lg leading-relaxed">
+    I have also earned certifications in <strong>Graphic Design, Web Development, Java Programming, Excel, and Digital 
+    Tools</strong>, and completed multiple real-world creative projects including logos, posters, brand identities, 
+    full-stack websites, and UI designs. My goal is to build smart, scalable, and impactful digital products that 
+    inspire people and create real value.
+  </p>
+</div>
         </div>
       </section>
 

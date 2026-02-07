@@ -8,7 +8,7 @@ import Services from "./Services";
 import About from "./About";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
-import heroVideo from "../assets/website_video.mp4";
+import heroVideo from "../assets/Website_Video.mp4";
 import GridScan from "../components/GridScan";
 
 const TEXTS = ["Websites", "AI Apps", "Logos", "Branding", "Mockups"];
@@ -25,7 +25,7 @@ const Home = () => {
   return (
     <div
       className="relative bg-[#0b0b0c] text-white font-['Lato','Roboto','Helvetica',sans-serif] overflow-hidden"
-      style={{ scrollBehavior: "smooth" }}
+      style={{ scrollBehavior: "unset" }}
     >
   
       {/* ===== HERO SECTION ===== */}
@@ -206,9 +206,9 @@ const Home = () => {
       </section>
 
       {/* SERVICES */}
-      {/* <section className="relative py-24 px-6 md:px-12" data-aos="fade-up"> */}
-        {/* <Services /> */}
-      {/* </section> */}
+      <section className="relative py-24 px-6 md:px-12" data-aos="fade-up">
+        <Services />
+      </section>
 
       {/* CONTACT */}
       <section className="relative py-24 px-6 md:px-12" data-aos="fade-up">
