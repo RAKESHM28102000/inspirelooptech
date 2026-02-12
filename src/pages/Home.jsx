@@ -8,7 +8,7 @@ import Services from "./Services";
 import About from "./About";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
-import heroVideo from "../assets/Website_Video.mp4";
+import heroVideo from "../assets/website_video.mp4";
 import GridScan from "../components/GridScan";
 
 const TEXTS = ["Websites", "AI Apps", "Logos", "Branding", "Mockups"];
@@ -30,20 +30,20 @@ const Home = () => {
   
       {/* ===== HERO SECTION ===== */}
       <section className="relative flex flex-col lg:flex-row items-center justify-center text-center lg:text-left min-h-screen px-6 md:px-16 py-20 gap-10 z-20">
-         <div className="absolute inset-0 w-full h-full min-h-[600px] md:min-h-[700px] lg:min-h-[800px] overflow-hidden">
-    <GridScan
-      sensitivity={0.55}
-      lineThickness={1}
-      linesColor="#392e4e"
-      gridScale={0.1}
-      scanColor="#FF9FFC"
-      scanOpacity={0.4}
-      enablePost
-      bloomIntensity={0.6}
-      chromaticAberration={0.002}
-      noiseIntensity={0.01}
-    />
-  </div>
+         {/* <div className="absolute inset-0 w-full h-full min-h-[600px] md:min-h-[700px] lg:min-h-[800px] overflow-hidden"> */}
+           {/* <GridScan */}
+            {/* //  sensitivity={0.55} */}
+            {/* //  lineThickness={1} */}
+            {/* //  linesColor="#392e4e" */}
+            {/* //  gridScale={0.1} */}
+            {/* //  scanColor="#FF9FFC" */}
+            {/* //  scanOpacity={0.4} */}
+            {/* //  enablePost */}
+            {/* //  bloomIntensity={0.6} */}
+            {/* //  chromaticAberration={0.002} */}
+            {/* //  noiseIntensity={0.01} */}
+          {/* //  /> */}
+        {/* </div> */}
         {/* LEFT — TEXT */}
         <div
           className="space-y-8 max-w-2xl relative z-30 flex flex-col items-center lg:items-start"
@@ -112,7 +112,7 @@ const Home = () => {
               muted
               playsInline
               preload="auto"
-              className="rounded-3xl shadow-2xl w-full opacity-90 hover:opacity-100 transition-all duration-700 z-10"
+              className="rounded-3xl shadow-2xl w-full ring-2 ring-purple-600 opacity-90 hover:opacity-100 transition-all duration-700 z-10"
             > 
               <source src={heroVideo} type="video/mp4" />
             </video>
