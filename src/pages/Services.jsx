@@ -27,19 +27,19 @@ const Services = () => {
     {
       title: "Static Website",
       desc: "Fast, SEO-friendly websites ideal for portfolios and small businesses.",
-      price: "₹2,999 - ₹5,999",
+      price: "₹2,999 - ₹9,999",
       img: "https://cdn-icons-png.flaticon.com/512/1055/1055687.png",
     },
     {
       title: "Dynamic Website",
       desc: "Interactive sites with CMS and database integration.",
-      price: "₹6,999 - ₹9,999",
+      price: "₹9,999 - ₹29,999",
       img: "https://cdn-icons-png.flaticon.com/512/906/906343.png",
     },
     {
       title: "AI Integrated Website",
       desc: "AI-powered sites with chatbots and automation tools.",
-      price: "₹15,999 - ₹29,999",
+      price: "₹59,999 - ₹99,999",
       img: "https://cdn-icons-png.flaticon.com/512/4712/4712108.png",
     },
   ];
