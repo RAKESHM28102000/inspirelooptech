@@ -166,10 +166,11 @@ const About = () => {
           <h2 className="text-3xl font-bold mb-12 bg-gradient-to-r from-[#00C8FF] via-[#7C4DFF] to-[#FF4081] bg-clip-text text-transparent">
             Client & Learner Feedback
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: 'MPR POWER TECH', message: 'Amazing branding work! My startup now looks premium and professional.' },
+              { name: 'MPR Power Tech', message: 'The website exceeded our expectations with its modern design and smooth user experience. The team was highly responsive, professional, and delivered everything on time. We highly recommend their services for quality and affordability.' },
               { name: 'Lunico Kitchen', message: 'The website is clean, professional design that effectively showcases our specialty in corporate catering services. Navigation is clear and content is well-organized, making it easy to find menus and contact details. The site clearly communicates our brand mission and focuses strongly on trust and reliability with our prominent client testimonials.' },
+              { name: 'Annai Indira School', message: 'The website design and user experience are excellent—smooth, modern, and easy to navigate. Your attention to detail and professional approach really stand out in the final result. Thank you for being supportive, responsive, and affordable throughout the entire process.' },
             ].map((testimonial, idx) => (
               <div key={idx} className="bg-[#1E1E1E] border border-[#444444] rounded p-6 shadow-md hover:shadow-[#aaa] transition duration-300">
                 <p className="text-[#B0B0B0] mb-4 italic">"{testimonial.message}"</p>

@@ -4,6 +4,7 @@ import { EyeIcon } from '@heroicons/react/24/solid';
 const websiteProjects = [
   { title: 'MPR POWER TECH', img:'./image/websites/mprpowertechnew.png', link:"https://mprpowertech.online/" },
   { title: 'Lunico kitchen', img:'./image/websites/catering app.png', link:"https://lunicokitchen.com/" },
+  { title: 'Annai Indira School', img:'./image/websites/annaiindiraschool.png', link: "https://annaiindiraedu.org/" },
   { title: 'Edge Club', img:'./image/websites/egdeclub.png', link: "https://edgeunom.online/" },
   { title: 'Synergy Club', img:'./image/websites/synergyclub (1).png', link:"http://synergyunom.onrender.com/"},
   { title: 'Electrical', img:'./image/websites/mpr2024.png', link:"https://mprpowertechofficial.netlify.app/" },
