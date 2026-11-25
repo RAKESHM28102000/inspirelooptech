@@ -191,25 +191,27 @@ const About = () => {
   <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-[#00C8FF] via-[#7C4DFF] to-[#FF4081] bg-clip-text text-transparent">
     About Me
   </h2>
-
   <p className="text-[#B0B0B0] text-lg leading-relaxed mb-4">
-    I'm <strong>Rakesh M</strong> — Founder of <strong>InspireLoop Tech</strong>, a creative digital startup focused on 
-    modern websites, branding, UI/UX design, and innovative digital experiences. I love transforming ideas into 
-    visually powerful and meaningful solutions that help businesses grow in the digital world.
-  </p>
+  I'm <strong>Rakesh M</strong> — a creative individual passionate about design, 
+  technology, and building digital experiences. I enjoy exploring new ideas, 
+  learning new skills, and turning them into creative and practical solutions. 
+  I believe in continuously learning, experimenting, and implementing ideas 
+  through real-world projects.
+</p>
 
-  <p className="text-[#B0B0B0] text-lg leading-relaxed mb-4">
-    I completed my <strong>B.E.</strong> and I am currently pursuing an <strong>MBA</strong> at the University of Madras, 
-    specializing in <strong>Human Resource Management and Marketing</strong>. This combination of technology, business, 
-    and creativity helps me design solutions that are both beautiful and strategically effective.
-  </p>
+<p className="text-[#B0B0B0] text-lg leading-relaxed mb-4">
+  My educational background includes a <strong>B.E. from College of Engineering, 
+  Guindy (Anna University)</strong> and an <strong>MBA from the University of Madras</strong>. 
+  My journey combines creativity, technology, and business perspectives, 
+  helping me approach projects with curiosity and a fresh mindset.
+</p>
 
-  <p className="text-[#B0B0B0] text-lg leading-relaxed">
-    I have also earned certifications in <strong>Graphic Design, Web Development, Java Programming, Excel, and Digital 
-    Tools</strong>, and completed multiple real-world creative projects including logos, posters, brand identities, 
-    full-stack websites, and UI designs. My goal is to build smart, scalable, and impactful digital products that 
-    inspire people and create real value.
-  </p>
+<p className="text-[#B0B0B0] text-lg leading-relaxed">
+  I love creating websites, designing graphics, exploring new technologies, 
+  and bringing ideas to life. I'm always open to new opportunities, creative 
+  collaborations, and freelance projects. <strong>Feel free to contact me anytime 
+  to collaborate, discuss ideas, or build something amazing together.</strong>
+</p>
 </div>
         </div>
       </section>
